@@ -5,12 +5,15 @@ import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
 import { Home } from './home/home';
 import { Menu } from './menu/menu';
+import { ViewAllStudent } from './view-all-student/view-all-student';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     App,
     Home,
-    Menu
+    Menu,
+    ViewAllStudent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +22,10 @@ import { Menu } from './menu/menu';
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+    provideHttpClient(
+      withFetch()
+    )
   ],
   bootstrap: [App]
 })
