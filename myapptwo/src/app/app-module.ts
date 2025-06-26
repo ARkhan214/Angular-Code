@@ -7,17 +7,23 @@ import { Home } from './home/home';
 import { Menu } from './menu/menu';
 import { ViewAllStudent } from './view-all-student/view-all-student';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { Addstudent } from './addstudent/addstudent';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     App,
     Home,
     Menu,
-    ViewAllStudent
+    ViewAllStudent,
+    Addstudent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),

@@ -5,7 +5,7 @@ import { Menu } from './menu/menu';
 import { ViewAllStudent } from './view-all-student/view-all-student';
 
 const routes: Routes = [
-{ path: '', component: Home },
+{ path: 'h', component: Home },
 { path: 'm', component: Menu },
 {path: 'view', component: ViewAllStudent}
 
