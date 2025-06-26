@@ -15,11 +15,25 @@ baseUrl: string = "http://localhost:3000/students";
    }
 
 getAllStudent():Observable<any>{
+
   return this.http.get(this.baseUrl);
+
 }
 saveAllStudent(student:Student):Observable<any>{
+
 return this.http.post(this.baseUrl,student);
 
 }
+
+deleteStudent(id:string):Observable<any>{
+
+  return this.http.delete(this.baseUrl+"/"+id);
+
+}
+
+getStudentById(id:string):Observable<any>{
+ return this.http.get(this.baseUrl+'/'+id);
+}
+
 
 }

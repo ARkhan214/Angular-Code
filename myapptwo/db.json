@@ -1,10 +1,22 @@
 {
-    "students":[{
-        "id": "1",
-        "name": "Md Talim",
-        "email": "jfkldsf@gmail.com",
-        "fee":3444
-    }]
-
-
+  "students": [
+    {
+      "id": "1",
+      "name": "Md Talim",
+      "email": "jfkldsf@gmail.com",
+      "fee": 3444
+    },
+    {
+      "id": "98c8",
+      "name": "Md Rahim Khan",
+      "email": "mdrahim@gmail.com",
+      "fee": 350
+    },
+    {
+      "id": "2974",
+      "name": "Sadier",
+      "email": "sadier@gmail.com",
+      "fee": 500
+    }
+  ]
 }
