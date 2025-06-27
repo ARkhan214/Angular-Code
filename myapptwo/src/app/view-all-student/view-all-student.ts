@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { StudentService } from '../service/student.service';
 import { Router } from '@angular/router';
 import { error } from 'console';
+import {} from '@fortawesome/angular-fontawesome'
 
 @Component({
   selector: 'app-view-all-student',
@@ -15,6 +16,7 @@ export class ViewAllStudent implements OnInit{
     private studentservice:StudentService,
     private router:Router,
     private cdr:ChangeDetectorRef
+    
 
   ){}
 
@@ -43,6 +45,26 @@ error:(error)=>{
 
 }
 
+getStudentById(id:string):void{
+this.studentservice.getStudentById(id).subscribe({
+
+  next:(res)=>{
+    console.log(res)
+    console.log("Data Save");
+    this.router.navigate(['/updatestudent',id])
+
+  },
+
+  error:(err)=>{
+    console.log(err);
+
+  }
+
+
+});
+
+
+}
 
 
 }

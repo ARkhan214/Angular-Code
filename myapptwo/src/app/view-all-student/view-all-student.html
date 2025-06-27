@@ -23,9 +23,10 @@
                     <td>{{s.fee}}</td>                  
                     <td>
                       
-                        <a href="editEmployeeform.jsp?id=${e.id}" class="btn btn-primary">Edit</a>
+                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="getStudentById(s.id)" >Edit</button>
 
-                        <button  class="btn btn-danger" (click)="deleteStudent(s.id)" >Delete</button>
+                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="deleteStudent(s.id)" >Delete</button>
+                        
 
                     </td>
 

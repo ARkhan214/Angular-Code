@@ -3,8 +3,8 @@
     {
       "id": "1",
       "name": "Md Talim",
-      "email": "jfkldsf@gmail.com",
-      "fee": 3444
+      "email": "talim@gmail.com",
+      "fee": 300
     },
     {
       "id": "98c8",
@@ -17,6 +17,30 @@
       "name": "Sadier",
       "email": "sadier@gmail.com",
       "fee": 500
+    },
+    {
+      "id": "b21b",
+      "name": "Rakib ",
+      "email": "rakib@gmail.com",
+      "fee": 450
+    },
+    {
+      "id": "af98",
+      "name": "Masud Khan",
+      "email": "masud@gmail.com",
+      "fee": 400
+    },
+    {
+      "id": "f000",
+      "name": "Atiq",
+      "email": "atiq@gmail.com",
+      "fee": 500
+    },
+    {
+      "id": "96be",
+      "name": "Simul",
+      "email": "simul@gmail.com",
+      "fee": 550
     }
   ]
 }
