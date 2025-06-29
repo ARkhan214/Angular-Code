@@ -2,7 +2,7 @@
 
 
 
-    <h1 class="text-warning text-center bg-danger">Student Details</h1> 
+    <h1 class="text-warning text-center bg-success">Student Details</h1> 
 
     <table class="table table-striped">
 
@@ -20,10 +20,10 @@
                     <td>{{s.id}}</td>
                     <td>{{s.name}}</td>
                     <td>{{s.email}}</td>                  
-                    <td>{{s.fee}}</td>                  
+                    <td>{{s.fee |currency}}</td>                  
                     <td>
                       
-                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="getStudentById(s.id)" >Edit</button>
+                        <button  class="btn btn-success" style="margin-left: 5px;" (click)="getStudentById(s.id)" >Edit</button>
 
                         <button  class="btn btn-danger" style="margin-left: 5px;" (click)="deleteStudent(s.id)" >Delete</button>
                         
