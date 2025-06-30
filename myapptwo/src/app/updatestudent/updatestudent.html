@@ -7,7 +7,7 @@
         <h1 class="jumborton"><i class="fa-solid fa-graduation-cap"></i> Update Stusent</h1>
     </div>
     <!--    start form-->
-    <form (ngSubmit)="onSubmit()">
+    <form *ngIf="student.id" (ngSubmit)="updateStudent()">
         <input type="hidden" name="action" value="add">
         
         <div class="row">
@@ -25,7 +25,15 @@
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Fee</label>
                 <input type="number" class="form-control"  name="fee" placeholder="000" [(ngModel)]="student.fee">
-            </div>        
+            </div>  
+            
+             <div class="col-md-6">
+                <label for="location" class="form-label">Location</label>
+                <select id="location" name="location" class="form-select" [(ngModel)]="student.location"
+                    [compareWith]="compareLocation">
+                    <option *ngFor="let loc of locations" [ngValue]="loc">{{ loc.name }}</option>
+                </select>
+            </div>
         
         </div>
 

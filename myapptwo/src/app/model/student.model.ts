@@ -1,13 +1,13 @@
 export class Student {
 
-    id !: number;
+    id !: string;
     name !: string;
     email !: string;
     fee !: number;
 
-    lication !: {
+    location !: {
 
-    id : number;
+    id : string;
     name : string;
     photo : string;
 
