@@ -1,1 +1,36 @@
-<p>view-all-location works!</p>
+
+<div class="container">
+    <h1 class="my-2 text-center">All Location</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Photo</th>                
+                <th>Action</th>
+            </tr>
+
+
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let l of locations  | async">
+                <td>{{l.id}}</td>
+                <td>{{l.name}}</td>
+                <td><img src="{{l.photo}}" height="100" width="100" /></td>
+                
+                <td>
+
+                    <button class="btn btn-warning m-1 p-1" (click)=" getLocationById(l.id)">Edit</button>
+                    <button class="btn btn-danger m-1 p-1" (click)=" deleteLocation(l.id)">Delete</button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+

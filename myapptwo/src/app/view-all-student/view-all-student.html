@@ -12,15 +12,17 @@
                 <th>Name</th>
                 <th>Email</th>
                 <th>Fee</th>
+                <th>Location</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
-                <tr *ngFor="let s of student | async">
+                <tr *ngFor="let s of students | async">
                     <td>{{s.id}}</td>
                     <td>{{s.name}}</td>
                     <td>{{s.email}}</td>                  
-                    <td>{{s.fee |currency}}</td>                  
+                    <td>{{s.fee |currency}}</td>
+                    <td>{{s.location?.name}}</td>                  
                     <td>
                       
                         <button  class="btn btn-success" style="margin-left: 5px;" (click)="getStudentById(s.id)" >Edit</button>

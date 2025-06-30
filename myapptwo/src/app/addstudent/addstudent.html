@@ -25,9 +25,25 @@
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Fee</label>
                 <input type="number" class="form-control"  formControlName="fee" placeholder="000">
-            </div>        
+            </div>       
+            
+             <div class="col-md-6 " formGroupName="location">
+                <div class="invalid-feedback">Please select a location.</div>
+                <label for="location" class="form-label">Location:</label>
+                <select id="location" formControlName="name" class="form-select" required>
+                    <option *ngFor="let loc of locations" [ngValue]="loc.name">{{loc.name}}</option>
+                </select>
+
+            </div>
+
         
         </div>
+
+
+           
+
+       
+
 
         <div class="row mt-3 text-center">
             <div class="col-md-6">
