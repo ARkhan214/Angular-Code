@@ -40,7 +40,7 @@ export class Updatestudent implements OnInit {
       next: (res) => {
 
         this.student = res;
-        this.cdr.markForCheck();
+        //this.cdr.markForCheck();
       },
       error: (err) => {
 
