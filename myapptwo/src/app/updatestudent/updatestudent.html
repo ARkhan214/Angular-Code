@@ -1,40 +1,42 @@
-
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <div class="container my-3">
     <div class="bg-success text-center">
-       
+
         <h1 class="jumborton"><i class="fa-solid fa-graduation-cap"></i> Update Stusent</h1>
     </div>
     <!--    start form-->
     <form *ngIf="student.id" (ngSubmit)="updateStudent()">
         <input type="hidden" name="action" value="add">
-        
+
         <div class="row">
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control"  name="name" placeholder="Full Name" [(ngModel)]="student.name">
+                <input type="text" class="form-control" name="name" placeholder="Full Name" [(ngModel)]="student.name">
             </div>
 
-             
+
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="text" class="form-control"  name="email" placeholder="abcd@gmail.com" [(ngModel)]="student.email">
+                <input type="text" class="form-control" name="email" placeholder="abcd@gmail.com"
+                    [(ngModel)]="student.email">
             </div>
 
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Fee</label>
-                <input type="number" class="form-control"  name="fee" placeholder="000" [(ngModel)]="student.fee">
-            </div>  
-            
-             <div class="col-md-6">
+                <input type="number" class="form-control" name="fee" placeholder="000" [(ngModel)]="student.fee">
+            </div>
+
+            <div class="col-md-6">
                 <label for="location" class="form-label">Location</label>
                 <select id="location" name="location" class="form-select" [(ngModel)]="student.location"
-                    [compareWith]="compareLocation">
-                    <option *ngFor="let loc of locations" [ngValue]="loc">{{ loc.name }}</option>
+                    [compareWith]="compareLocation" required>
+                    <option [ngValue]="null">-- Select Location --</option>
+                    <option *ngFor="let loc of locations" [ngValue]="loc">
+                        {{ loc.name }}
+                    </option>
                 </select>
             </div>
-        
+
         </div>
 
         <div class="row mt-3 text-center">
@@ -44,7 +46,7 @@
             </div>
 
             <div class="col-md-6">
-                <button type="reset" class="btn btn-danger text-center" >Reset</button>
+                <button type="reset" class="btn btn-danger text-center">Reset</button>
 
             </div>
         </div>
@@ -52,6 +54,3 @@
 
     <!--end form    -->
 </div>
-
-
-

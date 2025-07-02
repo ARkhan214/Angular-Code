@@ -33,22 +33,13 @@ export class Updatestudent implements OnInit {
   }
 
   loadStudentById(): void {
-
-    // this.id = this.route.snapshot.params['id'];
     this.studentService.getStudentById(this.id).subscribe({
-
       next: (res) => {
-
         this.student = res;
-        //this.cdr.markForCheck();
+        this.cdr.markForCheck();
       },
-      error: (err) => {
-
-        console.log('Error fetching student:', err);
-
-      }
-
-    })
+      error: (err) => console.error('Error fetching student:', err)
+    });
   }
 
   updateStudent(): void {
@@ -68,20 +59,8 @@ export class Updatestudent implements OnInit {
     });
   }
 
-
   compareLocation(l1: Location, l2: Location): boolean {
     return l1 && l2 ? l1.id === l2.id : l1 === l2;
   }
-
-  // onSubmit(): void {
-  //   this.studentService.updateStudent(this.id, this.student).subscribe({
-
-  //     next: () => this.router.navigate(['/view']),
-  //     error: (err) => console.log('update failed', err)
-
-
-  //   })
-
-  // }
 
 }
