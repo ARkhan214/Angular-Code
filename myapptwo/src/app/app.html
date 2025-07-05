@@ -25,30 +25,54 @@
             Students
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"></a></li>
-            <li><a class="dropdown-item" href="addstu">Add Student</a></li>
-            <li><a class="dropdown-item" href="view">Student Details</a></li>
+            <li>
+              <a class="dropdown-item" href="#"></a>
+            </li>
+            <ng-container *ngIf="userRole === 'user' || userRole === 'admin'">
+            <!-- another way -->
+            <!-- <ng-container *ngIf="(userRole === 'user') || ('admin')"> -->
+
+            <li>
+              <a class="dropdown-item" routerLink="addstu">Add Student</a>
+            </li>
+            </ng-container>
+
+            <ng-container *ngIf="userRole === 'admin'">            
+              <li>            
+              <a class="dropdown-item" routerLink="view">Student Details</a></li>
+              <li>
+
+            </ng-container>
+
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+
+            <li>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </li>
+
           </ul>
         </li>
 
+
+        <ng-container *ngIf="userRole === 'admin'">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Location
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#"></a></li>
-            <li><a class="dropdown-item" href="addloc">Add Location</a></li>
-            <li><a class="dropdown-item" href="allloc">View Location</a></li>
+            <li><a class="dropdown-item" routerLink="addloc">Add Location</a></li>
+            <li><a class="dropdown-item" routerLink="allloc">View Location</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        </ng-container>
+        
 
         <li class="nav-item">
           <a class="nav-link" href="m">Menu</a>

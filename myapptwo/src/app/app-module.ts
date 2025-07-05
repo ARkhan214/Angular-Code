@@ -17,6 +17,8 @@ import { ViewAllLocation } from './location/view-all-location/view-all-location'
 import { Registration } from './auth/registration/registration';
 import { Login } from './auth/login/login';
 import { Userprofile } from './auth/userprofile/userprofile';
+import { Logout } from './auth/logout/logout';
+import { Admin } from './auth/admin/admin';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { Userprofile } from './auth/userprofile/userprofile';
     ViewAllLocation,
     Registration,
     Login,
-    Userprofile
+    Userprofile,
+    Logout,
+    Admin
   ],
   imports: [
     BrowserModule,
