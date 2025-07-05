@@ -9,6 +9,8 @@ import { Addlocation } from './location/addlocation/addlocation';
 import { ViewAllLocation } from './location/view-all-location/view-all-location';
 import { UpdateLocation } from './location/update-location/update-location';
 import { Registration } from './auth/registration/registration';
+import { Login } from './auth/login/login';
+import { Userprofile } from './auth/userprofile/userprofile';
 
 
 const routes: Routes = [
@@ -21,6 +23,8 @@ const routes: Routes = [
 {path: 'allloc', component: ViewAllLocation},
 {path: 'addloc', component: Addlocation},
 {path: 'reg', component: Registration},
+{path: 'userprofile', component: Userprofile},
+{path: 'login', component: Login},
 
 
 ];

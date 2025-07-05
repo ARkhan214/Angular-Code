@@ -1,8 +1,8 @@
-
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -17,31 +17,35 @@
         <li class="nav-item">
           <a class="nav-link" href="addstu">Add Student</a>
         </li> -->
-      
-        
 
-         <li class="nav-item dropdown">
+
+
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Students
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"></a></li>            
+            <li><a class="dropdown-item" href="#"></a></li>
             <li><a class="dropdown-item" href="addstu">Add Student</a></li>
             <li><a class="dropdown-item" href="view">Student Details</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
-       
-    <li class="nav-item dropdown">
+
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Location
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"></a></li>            
+            <li><a class="dropdown-item" href="#"></a></li>
             <li><a class="dropdown-item" href="addloc">Add Location</a></li>
             <li><a class="dropdown-item" href="allloc">View Location</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
@@ -49,11 +53,12 @@
         <li class="nav-item">
           <a class="nav-link" href="m">Menu</a>
         </li>
-      
+
       </ul>
       <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+        <button class="btn btn-outline-primary mx-3" type="submit" routerLink="login">Login</button>
+        <button class="btn btn-outline-success" type="submit" routerLink="logout">Logout</button>
       </form>
     </div>
   </div>
@@ -62,4 +67,22 @@
 <router-outlet />
 
 
-<div class="container"> <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"> <div class="col-md-4 d-flex align-items-center"> <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap"> <svg class="bi" width="30" height="24" aria-hidden="true"><use xlink:href="#bootstrap"></use></svg> </a> <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span> </div> <ul class="nav col-md-4 justify-content-end list-unstyled d-flex"> <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram"><svg class="bi" width="24" height="24" aria-hidden="true"><use xlink:href="#instagram"></use></svg></a></li> <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li> </ul> </footer> </div>
+<div class="container">
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <div class="col-md-4 d-flex align-items-center"> <a href="/"
+        class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1" aria-label="Bootstrap"> <svg class="bi"
+          width="30" height="24" aria-hidden="true">
+          <use xlink:href="#bootstrap"></use>
+        </svg> </a> <span class="mb-3 mb-md-0 text-body-secondary">© 2025 Company, Inc</span> </div>
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Instagram"><svg class="bi" width="24"
+            height="24" aria-hidden="true">
+            <use xlink:href="#instagram"></use>
+          </svg></a></li>
+      <li class="ms-3"><a class="text-body-secondary" href="#" aria-label="Facebook"><svg class="bi" width="24"
+            height="24">
+            <use xlink:href="#facebook"></use>
+          </svg></a></li>
+    </ul>
+  </footer>
+</div>
