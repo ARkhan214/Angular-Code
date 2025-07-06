@@ -1,12 +1,15 @@
-import { ActivatedRouteSnapshot, CanActivate, CanActivateFn, GuardResult, MaybeAsync, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { AuthService } from '../service/auth-service';
-import { ChangeDetectorRef, Inject, PLATFORM_ID } from '@angular/core';
+import { ChangeDetectorRef, Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { CanActivate, Router, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+
+@Injectable({
+  providedIn:'root'
+})
 
 export class AdminGuard implements CanActivate {
 
 constructor(
-
   private authService:AuthService,
   private router: Router,
   // private cdr:ChangeDetectorRef,

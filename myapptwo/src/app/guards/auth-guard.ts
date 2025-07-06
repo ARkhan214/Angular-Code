@@ -16,8 +16,8 @@ private router:Router
 ){}
 
   canActivate():boolean | UrlTree {
-   if(this.authService.isAuthenticated() && ( this.authService.isAdmin()) || this.authService.isUser()){
-
+   if(this.authService.isAuthenticated() && ( this.authService.isAdmin() || this.authService.isUser())){
+    return true; 
    }
    
    return this.router.createUrlTree(['login']);
