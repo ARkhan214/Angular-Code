@@ -16,7 +16,7 @@ export class Addstudent implements OnInit {
 
 locations:Location[]=[];
 
-formgroup !: FormGroup
+formStudent !: FormGroup
 
 constructor(
   private studentservice : StudentService,
@@ -26,7 +26,7 @@ constructor(
 
 ){}
   ngOnInit(): void {
-    this.formgroup=this.formbuilder.group({
+    this.formStudent=this.formbuilder.group({
       name:[''],
       email:[''],
       fee:[''],
@@ -42,16 +42,18 @@ constructor(
 this.loadLocation();
 
 
-  this.formgroup.get('location')?.get('name')?.valueChanges.subscribe(name => {
-      const selectedLocation = this.locations.find(loc => loc.name === name);
+  this.formStudent.get('location')?.get('name')?.valueChanges.subscribe(selectedname => {
+      const selectedLocation = this.locations.find(loc => loc.name === selectedname);
       if (selectedLocation) {
-        this.formgroup.patchValue({ location: selectedLocation });
+        this.formStudent.patchValue({ location: selectedLocation });
       }
     });
 
 
 
   }
+
+  
 
    loadLocation(): void{
    this.locationService.getAllLocation().subscribe({
@@ -69,7 +71,7 @@ this.loadLocation();
 
   addstudent(): void{
 
-    const student: Student ={...this.formgroup.value};
+    const student: Student ={...this.formStudent.value};
 
     this.studentservice.saveAllStudent(student).subscribe({
 
@@ -79,7 +81,7 @@ this.loadLocation();
         console.log("Student saved",res);
         this.loadLocation();
 
-        this.formgroup.reset();
+        this.formStudent.reset();
         
         this.router.navigate(['/view']);
 

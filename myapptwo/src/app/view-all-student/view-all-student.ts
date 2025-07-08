@@ -36,11 +36,11 @@ export class ViewAllStudent implements OnInit {
 
   loadData(): void {
     forkJoin({
-      locations: this.locationService.getAllLocation(),
+      location: this.locationService.getAllLocation(),
       students: this.studentservice.getAllStudent()
     }).subscribe({
-      next: ({ locations, students }) => {
-        this.locations = locations;
+      next: ({ location, students }) => {
+        this.locations = location;
         this.students = students;
         this.cdr.markForCheck();
       },
