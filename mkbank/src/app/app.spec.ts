@@ -26,6 +26,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, khan-bank-ltd');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, mkbank');
   });
 });
