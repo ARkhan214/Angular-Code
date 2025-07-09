@@ -1,12 +1,31 @@
 {
   "user": [
     {
-      "id": "6b9c",
-      "name": "Md Rahim Khan",
-      "email": "mdrahimkhan@gmail.com",
+      "id": "5395",
+      "name": "MD RAHIM KHAN",
+      "email": "abdurrahimkhan214@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "3bd1",
+      "name": "Reja",
+      "email": "reja@gmail.com",
+      "password": "1234"
     }
   ],
-  "accounts": [],
+  "accounts": [
+    {
+      "id": "7f55",
+      "userId": "5395",
+      "type": "savings",
+      "balance": 500
+    },
+    {
+      "id": "1f84",
+      "userId": "3bd1",
+      "type": "savings",
+      "balance": 200000
+    }
+  ],
   "transactions": []
 }

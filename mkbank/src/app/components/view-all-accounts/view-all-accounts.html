@@ -1,0 +1,45 @@
+<p>view-all-accounts works!</p>
+<div class="container px-0 border border-danger rounded">
+
+
+
+    <h1 class="text-warning text-center bg-success"><i class="fa fa-users me-1"></i>All Account Details</h1> 
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Id</th>
+                <th>Type</th>
+                <th>Balance</th>
+                <th>Action</th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let a of account | async">
+                    <td>{{a.id}}</td>
+                    <td>{{a.userId}}</td>
+                    <td>{{a.type}}</td>                  
+                    <td>{{a.balance}}</td>                  
+                 
+                                      
+                    <td>
+                      
+                        <button  class="btn btn-success" style="margin-left: 5px;" >Edit</button>
+
+                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="deleteAccount(a.id)" >Delete</button>
+                        
+
+                    </td>
+
+                </tr>
+
+           
+
+        </tbody>
+    </table>
+
+</div>

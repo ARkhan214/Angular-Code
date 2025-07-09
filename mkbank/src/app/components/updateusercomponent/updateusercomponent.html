@@ -1,4 +1,5 @@
-<p>usercomponent works!</p>
+<p>updateusercomponent works!</p>
+
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -8,44 +9,26 @@
         <h1 class="jumborton"><i class="fa fa-users me-1"></i> Add User</h1>
     </div>
     <!--    start form-->
-    <form [formGroup]="userAccountForm">
+    <form (ngSubmit)="updateUser()">
         <input type="hidden" name="action" value="add">
         
         <div class="row">
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control"  formControlName="name" >
+                <input type="text" class="form-control"  name="name" placeholder="Full Name" [(ngModel)]="user.name">
             </div>
 
              
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="text" class="form-control"  formControlName="email">
+                <input type="text" class="form-control" name="email" placeholder="abcd@gmail.com" [(ngModel)]="user.email">
             </div>
 
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Password</label>
-                <input type="password" class="form-control"  formControlName="password" placeholder="">
+                <input type="password" class="form-control"  name="password" placeholder="" [(ngModel)]="user.password">
             </div>       
             
-
-            <!-- Acount part -->
-
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">User Id</label>
-                <input type="text" class="form-control"  formControlName="userId" placeholder="">
-            </div>       
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Type</label>
-                <input type="text" class="form-control"  formControlName="type" placeholder="">
-            </div>       
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Balance</label>
-                <input type="text" class="form-control"  formControlName="balance" placeholder="">
-            </div> 
-
-
-
              <!-- <div class="col-md-6 " formGroupName="location">
                 <div class="invalid-feedback">Please select a location.</div>
                 <label for="location" class="form-label">Location:</label>
@@ -66,7 +49,7 @@
 
         <div class="row mt-3 text-center">
             <div class="col-md-6">
-                <button type="submit" class="btn btn-success text-center" (click)="onSubmit()">Save</button>
+                <button type="submit" class="btn btn-success text-center">Save</button>
 
             </div>
 

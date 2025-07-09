@@ -17,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-                <tr *ngFor="let u of user ">
+                <tr *ngFor="let u of user | async">
                     <td>{{u.id}}</td>
                     <td>{{u.name}}</td>
                     <td>{{u.email}}</td>                  
@@ -25,9 +25,9 @@
                                       
                     <td>
                       
-                        <button  class="btn btn-success" style="margin-left: 5px;"  >Edit</button>
+                        <button  class="btn btn-success" style="margin-left: 5px;" (click)="getUserById(u.id)">Edit</button>
 
-                        <button  class="btn btn-danger" style="margin-left: 5px;"  >Delete</button>
+                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="deleteUser(u.id)" >Delete</button>
                         
 
                     </td>

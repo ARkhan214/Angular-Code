@@ -12,13 +12,15 @@ import { Usercomponent } from './components/usercomponent/usercomponent';
 import { Viewallusercomponent } from './components/viewallusercomponent/viewallusercomponent';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { Updateusercomponent } from './components/updateusercomponent/updateusercomponent';
+import { ViewAllAccounts } from './components/view-all-accounts/view-all-accounts';
 
 @NgModule({
   declarations: [
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts
   ],
   imports: [
     BrowserModule,

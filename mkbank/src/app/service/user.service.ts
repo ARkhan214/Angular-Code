@@ -13,8 +13,8 @@ private baseUrl: string = "http://localhost:3000/user";
     private http:HttpClient
   ) { }
 
-  getAllUser(): Observable<any>{
-  return this.http.get(this.baseUrl);
+  getAllUser(): Observable<User>{
+  return this.http.get<User>(this.baseUrl);
 }
 
 saveAllUser(alluser:User): Observable<any>{

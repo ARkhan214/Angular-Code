@@ -1,7 +1,10 @@
 export class Accounts{
-    id !:string;
+
+
+    id ?:string;
     userId !:string;
     type !:string;
     balance !:number;
+    
 
 }
