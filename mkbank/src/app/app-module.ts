@@ -9,22 +9,32 @@ import { Navbar } from './layout/navbar/navbar';
 import { Footer } from './layout/footer/footer';
 import { ViewCustomer } from './components/view-customer/view-customer';
 import { Usercomponent } from './components/usercomponent/usercomponent';
+import { Viewallusercomponent } from './components/viewallusercomponent/viewallusercomponent';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // notun project neyar por eta likhte hobe
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()),
+
+    // notun project neyar por eta likhte hobe
+    provideHttpClient(withFetch())
   ],
   bootstrap: [App]
 })

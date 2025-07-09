@@ -1,5 +1,12 @@
 {
- "user":[
-    
- ]  
+  "user": [
+    {
+      "id": "6b9c",
+      "name": "Md Rahim Khan",
+      "email": "mdrahimkhan@gmail.com",
+      "password": "123"
+    }
+  ],
+  "accounts": [],
+  "transactions": []
 }

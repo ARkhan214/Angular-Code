@@ -36,8 +36,7 @@ getStudentById(id:string):Observable<any>{
 }
 
 updateStudent(id:string,student:Student): Observable<any>{
-return this.http.put(this.baseUrl+'/'+id,student
-);
+return this.http.put(this.baseUrl+'/'+id,student);
 
 }
 

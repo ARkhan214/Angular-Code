@@ -1,0 +1,42 @@
+<p>viewallusercomponent works!</p>
+<div class="container px-0 border border-danger rounded">
+
+
+
+    <h1 class="text-warning text-center bg-success"><i class="fa fa-users me-1"></i>All User Details</h1> 
+
+    <table class="table table-striped">
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Action</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+                <tr *ngFor="let u of user ">
+                    <td>{{u.id}}</td>
+                    <td>{{u.name}}</td>
+                    <td>{{u.email}}</td>                  
+                 
+                                      
+                    <td>
+                      
+                        <button  class="btn btn-success" style="margin-left: 5px;"  >Edit</button>
+
+                        <button  class="btn btn-danger" style="margin-left: 5px;"  >Delete</button>
+                        
+
+                    </td>
+
+                </tr>
+
+           
+
+        </tbody>
+    </table>
+
+</div>
