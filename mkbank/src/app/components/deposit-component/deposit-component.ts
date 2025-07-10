@@ -24,17 +24,23 @@ export class DepositComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
       accountId: [''],
       amount: [''],
-      transactionDate: ['']
+      transactionDate: [new Date()],
+      chequeNumber: [''],
+      depositDate: [''],
+      transactionId: [''],
+      description: ['']
     });
 
   }
 
   deposit(): void {
     const accountId = this.formGroup.value.accountId;
-    const amount = this.formGroup.value.amount;
+    const amount = +this.formGroup.value.amount;
+
     this.accountService.depositToAccount(accountId, amount).subscribe({
       next: (res) => {
         console.log("Deposit Done");
+        this.formGroup.reset();
       },
       error: (error) => {
         console.log("Deposit Failed");

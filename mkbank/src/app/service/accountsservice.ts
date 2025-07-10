@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Accounts } from '../model/accounts.model';
-import { map, Observable, switchMap } from 'rxjs';
+import { map, Observable, switchMap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +13,36 @@ export class Accountsservice {
 
   constructor(private http: HttpClient) { }
 
+  
+//deposit
 
   depositToAccount(id: string, amount: number): Observable<any> {
+    const url = `${this.apiUrl}/${id}`;
+    return this.http.get<Accounts>(url).pipe(
+      map(account => {
+        let newBalance = account.balance + amount;
+        account.balance = newBalance;
+        return account;
+      }),
+      switchMap(updatedAccount => {
+        return this.http.put(`${this.apiUrl}/${id}`, updatedAccount);
+      })
+    );
+  }
+
+
+
+//withdraw
+
+  withdrawFromAccount(id: string, amount: number): Observable<any> {
   const url = `${this.apiUrl}/${id}`;
   return this.http.get<Accounts>(url).pipe(
-    map(account => {
-      account.balance += amount;
-      return account;
-    }),
-    switchMap(updatedAccount => {
-      return this.http.put(`${this.apiUrl}/${id}`, updatedAccount); 
+    switchMap(account => {
+      if (account.balance < amount) {
+        return throwError(() => new Error('Insufficient balance'));
+      }
+      account.balance -= amount;
+      return this.http.put<Accounts>(url, account);
     })
   );
 }
@@ -46,7 +66,7 @@ export class Accountsservice {
   updateAccount(id: string, account: Accounts): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, account);
   }
-  
+
   deleteAccount(id: string): Observable<any> {
     return this.http.delete(this.apiUrl + '/' + id);
   }

@@ -1,11 +1,12 @@
-export class Transaction{
+export class Transaction {
 
 
     id !: string;
-    accountId !:string;
-    type !:string;
-    amount !:number;
-    transactiontime !:Date;
+    accountId !: string;
+    type!: 'DEPOSIT' | 'WITHDRAW' | 'FIXED DEPOSIT';    
+    amount !: number;
+    transactiontime !: Date;
+    description?: string;
 
-    
+
 }

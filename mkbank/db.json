@@ -23,6 +23,18 @@
       "name": "Taj",
       "email": "taj@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "01e9",
+      "name": "Atiqul Islam",
+      "email": "atiqIslam@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "3ef2",
+      "name": "Sadier Rahman",
+      "email": "sadier@gmail.com",
+      "password": "12345"
     }
   ],
   "accounts": [
@@ -30,20 +42,20 @@
       "id": "7f55",
       "userId": "5395",
       "type": "savings",
-      "balance": 500
+      "balance": 1200
     },
     {
       "id": "1f84",
       "userId": "3bd1",
       "type": "savings",
-      "balance": 200000
+      "balance": 199945
     },
     {
       "id": "4585",
       "userId": "cf3d",
       "userName": "Raj",
       "type": "savings",
-      "balance": 1000
+      "balance": 1220
     },
     {
       "id": "f630",
@@ -51,12 +63,70 @@
       "userName": "Taj",
       "type": "savings",
       "balance": 300
+    },
+    {
+      "id": "4ce9",
+      "userId": "01e9",
+      "userName": "Atiqul Islam",
+      "type": "savings",
+      "balance": 25000
+    },
+    {
+      "id": "39ea",
+      "userId": "3ef2",
+      "userName": "Sadier Rahman",
+      "type": "Customer",
+      "balance": 670
     }
   ],
-  "transactions": [
-    
+  "transactions": [],
+  "deposit": [
+    {
+      "accountId": "5395",
+      "amount": "150",
+      "transactionDate": "2025-7-10"
+    }
   ],
-  "deposit":[
-
+  "withdraw": [
+    {
+      "id": "21d3",
+      "accountId": "7f55",
+      "amount": 300,
+      "transactionDate": "2025-07-10",
+      "transactionId": "123",
+      "description": "Mobile Recharge"
+    },
+    {
+      "id": "c846",
+      "accountId": "1f84",
+      "amount": 555,
+      "transactionDate": "2025-07-10",
+      "transactionId": "123",
+      "description": "f"
+    },
+    {
+      "id": "1413",
+      "accountId": "4ce9",
+      "amount": 10000,
+      "transactionDate": "2025-07-10",
+      "transactionId": "123",
+      "description": "Mobile"
+    },
+    {
+      "id": "f9ab",
+      "accountId": "39ea",
+      "amount": 500,
+      "transactionDate": "2025-07-10",
+      "transactionId": "123",
+      "description": "bg"
+    },
+    {
+      "id": "d5b0",
+      "accountId": "39ea",
+      "amount": 5000,
+      "transactionDate": "2025-07-10",
+      "transactionId": "123",
+      "description": "self"
+    }
   ]
 }

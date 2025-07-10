@@ -15,13 +15,15 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
 import { Updateusercomponent } from './components/updateusercomponent/updateusercomponent';
 import { ViewAllAccounts } from './components/view-all-accounts/view-all-accounts';
 import { DepositComponent } from './components/deposit-component/deposit-component';
+import { WithdrawComponent } from './components/withdraw-component/withdraw-component';
+import { TransactionComponent } from './components/transaction-component/transaction-component';
 
 @NgModule({
   declarations: [
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent
   ],
   imports: [
     BrowserModule,

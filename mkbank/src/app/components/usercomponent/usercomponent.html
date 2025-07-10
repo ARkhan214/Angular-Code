@@ -1,84 +1,75 @@
-<p>usercomponent works!</p>
+<p class="text-center text-muted fs-6 mt-3">User Component Loaded!</p>
 
-
+<!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<div class="container my-3">
-    <div class="bg-success text-center">
-       
-        <h1 class="jumborton"><i class="fa fa-users me-1"></i> Add User</h1>
+
+<div class="container mt-4">
+  <div class="card shadow-lg border-0">
+    <div class="card-header bg-success text-white text-center py-3">
+      <h3 class="mb-0"><i class="fa fa-user-plus me-2"></i> Add New User</h3>
     </div>
-    <!--    start form-->
-    <form [formGroup]="userAccountForm">
-        <input type="hidden" name="action" value="add">
-        
-        <div class="row">
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input type="text" class="form-control"  formControlName="name" >
-            </div>
 
-             
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input type="text" class="form-control"  formControlName="email">
-            </div>
+    <div class="card-body bg-light p-4">
+      <form [formGroup]="userAccountForm" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
 
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Password</label>
-                <input type="password" class="form-control"  formControlName="password" placeholder="">
-            </div>       
-            
+          <!-- Name -->
+          <div class="col-md-6">
+            <label class="form-label"><i class="fa fa-user me-1"></i> Name</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Enter full name" required>
+          </div>
 
-            <!-- Acount part -->
+          <!-- Email -->
+          <div class="col-md-6">
+            <label class="form-label"><i class="fa fa-envelope me-1"></i> Email</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Enter email address" required>
+          </div>
 
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">User Id</label>
-                <input type="text" class="form-control"  formControlName="userId" placeholder="">
-            </div>       
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Type</label>
-                <input type="text" class="form-control"  formControlName="type" placeholder="">
-            </div>       
-            <div class="col-md-6">
-                <label for="exampleInputEmail1" class="form-label">Balance</label>
-                <input type="text" class="form-control"  formControlName="balance" placeholder="">
-            </div> 
+          <!-- Password -->
+          <div class="col-md-6">
+            <label class="form-label"><i class="fa fa-lock me-1"></i> Password</label>
+            <input type="password" class="form-control" formControlName="password" placeholder="Enter password" required>
+          </div>
 
+          <!-- User ID -->
+          <div class="col-md-6">
+            <label class="form-label"><i class="fa fa-id-badge me-1"></i> User ID</label>
+            <input type="text" class="form-control" formControlName="userId" placeholder="Unique user ID" required>
+          </div>
 
+          <!-- Type -->
+          <div class="col-md-6">
+            <label class="form-label"><i class="fa fa-user-tag me-1"></i> Type</label>
+            <select class="form-select" formControlName="type" required>
+              <option value="">Select type</option>
+              <option value="Customer">Customer</option>
+              <option value="Admin">Admin</option>
+              <option value="Employee">Employee</option>
+            </select>
+          </div>
 
-             <!-- <div class="col-md-6 " formGroupName="location">
-                <div class="invalid-feedback">Please select a location.</div>
-                <label for="location" class="form-label">Location:</label>
-                <select id="location" formControlName="name" class="form-select" required>
-                    <option *ngFor="let loc of locations" [ngValue]="loc.name">{{loc.name}}</option>
-                </select>
+          <!-- Balance -->
+          <div class="col-md-6">
+            <label class="form-label"><i class="fa fa-money-bill-wave me-1"></i> Initial Balance</label>
+            <input type="number" class="form-control" formControlName="balance" placeholder="Enter balance" required>
+          </div>
 
-            </div> -->
-
-        
         </div>
 
-
-           
-
-       
-
-
-        <div class="row mt-3 text-center">
-            <div class="col-md-6">
-                <button type="submit" class="btn btn-success text-center" (click)="onSubmit()">Save</button>
-
-            </div>
-
-            <div class="col-md-6">
-                <button type="reset" class="btn btn-danger text-center" >Reset</button>
-
-            </div>
+        <!-- Buttons -->
+        <div class="row mt-4">
+          <div class="col-md-6 d-grid">
+            <button type="submit" class="btn btn-success">
+              <i class="fa fa-save me-1"></i> Save User
+            </button>
+          </div>
+          <div class="col-md-6 d-grid">
+            <button type="reset" class="btn btn-outline-danger">
+              <i class="fa fa-undo me-1"></i> Reset Form
+            </button>
+          </div>
         </div>
-    </form>
-
-    <!--end form    -->
+      </form>
+    </div>
+  </div>
 </div>
-
-
-

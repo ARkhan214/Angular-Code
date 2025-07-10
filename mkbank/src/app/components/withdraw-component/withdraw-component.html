@@ -1,0 +1,48 @@
+<p>withdraw-component works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <div class="card-header bg-danger text-white">
+          <h4 class="mb-0 text-center">Withdraw Money</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="formGroup" (ngSubmit)="withdraw()">
+            
+            <div class="mb-3">
+              <label for="accountId" class="form-label">Account ID</label>
+              <input id="accountId" type="text" formControlName="accountId" class="form-control" placeholder="Enter Account ID" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input id="amount" type="number" formControlName="amount" class="form-control" placeholder="Enter amount to withdraw" required min="1" />
+            </div>
+
+            <div class="mb-3">
+              <label for="transactionDate" class="form-label">Transaction Date</label>
+              <input id="transactionDate" type="date" formControlName="transactionDate" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="transactionId" class="form-label">Transaction ID</label>
+              <input id="transactionId" type="text" formControlName="transactionId" class="form-control" placeholder="Optional" />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea id="description" formControlName="description" class="form-control" rows="3" placeholder="Optional description..."></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-danger">
+                Withdraw Now
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,57 @@
-<form [formGroup]="formGroup" action="post">
-    <input type="text" formControlName="accountID">
-    <input type="text" formControlName="amount">
-    <button (click)="deposit()">Botton</button>
-</form>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg border-0">
+        <div class="card-header bg-primary text-white text-center">
+          <h4 class="mb-0">Submit a Deposit</h4>
+        </div>
+        <div class="card-body p-4 bg-light">
+          <form [formGroup]="formGroup" (ngSubmit)="deposit()">
+
+            <div class="mb-3">
+              <label for="accountId" class="form-label">Account ID</label>
+              <input id="accountId" type="text" formControlName="accountId" class="form-control" placeholder="Enter account ID" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="amount" class="form-label">Amount</label>
+              <input id="amount" type="number" formControlName="amount" class="form-control" placeholder="Enter deposit amount" required min="1" />
+            </div>
+
+            <div class="mb-3">
+              <label for="transactionDate" class="form-label">Transaction Date</label>
+              <input id="transactionDate" type="date" formControlName="transactionDate" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="chequeNumber" class="form-label">Cheque Number</label>
+              <input id="chequeNumber" type="text" formControlName="chequeNumber" class="form-control" placeholder="Enter cheque number" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="depositDate" class="form-label">Deposit Date</label>
+              <input id="depositDate" type="date" formControlName="depositDate" class="form-control" required />
+            </div>
+
+            <div class="mb-3">
+              <label for="transactionId" class="form-label">Transaction ID</label>
+              <input id="transactionId" type="text" formControlName="transactionId" class="form-control" placeholder="Auto-generated or optional" />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <textarea id="description" formControlName="description" class="form-control" rows="3" placeholder="Add any details..."></textarea>
+            </div>
+
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                <i class="bi bi-arrow-down-circle-fill me-2"></i> Submit Deposit
+              </button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
