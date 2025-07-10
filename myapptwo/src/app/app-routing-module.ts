@@ -19,7 +19,7 @@ import { AuthGuard } from './guards/auth-guard';
 
 
 const routes: Routes = [
-{ path: '', component: Home },
+{ path: 'home', component: Home },
 { path: 'm', component: Menu },
 {path: 'view', component: ViewAllStudent,canActivate:[AdminGuard]},
 {path: 'addstu', component: Addstudent,canActivate:[AuthGuard]},
@@ -29,7 +29,7 @@ const routes: Routes = [
 {path: 'addloc', component: Addlocation,canActivate:[AdminGuard]},
 {path: 'reg', component: Registration},
 {path: 'userprofile', component: Userprofile,canActivate:[UserGurd]},
-{path: 'login', component: Login},
+{path: '', component: Login},
 {path: 'logout', component: Logout},
 {path: 'adminprofile', component:Admin,canActivate:[AdminGuard]},
 

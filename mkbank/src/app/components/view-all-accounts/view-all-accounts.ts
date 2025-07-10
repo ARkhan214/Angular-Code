@@ -1,6 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Accountsservice } from '../../service/accountsservice';
 import { Router } from '@angular/router';
+import { UserService } from '../../service/user.service';
+import { Accounts } from '../../model/accounts.model';
+import { User } from '../../model/user.model';
 
 @Component({
   selector: 'app-view-all-accounts',
@@ -11,9 +14,11 @@ import { Router } from '@angular/router';
 export class ViewAllAccounts implements OnInit {
 
 account:any;
+// username:any;
 
    constructor(
     private accounService: Accountsservice,
+    private userService:UserService,
     private router: Router,
     private cdr: ChangeDetectorRef
   ) { }
@@ -25,8 +30,26 @@ account:any;
 
 loadData(): void {
     this.account = this.accounService.getAllAccount();
+    // this.username = this.userService.getAllUser();
     this.cdr.markForCheck();
   }
+
+//last update
+
+//  loadData(): void {
+//       this.account =this.accounService.getAllAccount().subscribe(accounts => {
+//       const updatedAccounts: Accounts[] = [];
+//       accounts.forEach(acc => {
+//         this.userService.getUserById(acc.userId).subscribe(user => {
+//           acc.userName = user.name;
+//           updatedAccounts.push(acc);
+//           this.account = [...updatedAccounts];
+//           this.cdr.markForCheck();
+//         });
+//       });
+//     });
+//   }
+
 
    deleteAccount(id: string): void {
     this.accounService.deleteAccount(id).subscribe({

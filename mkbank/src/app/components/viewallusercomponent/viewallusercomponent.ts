@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '../../model/user.model';
 import { UserService } from '../../service/user.service';
 import { Router } from '@angular/router';
+import { Accountsservice } from '../../service/accountsservice';
+import { Accounts } from '../../model/accounts.model';
 
 @Component({
   selector: 'app-viewallusercomponent',
@@ -16,6 +18,10 @@ export class Viewallusercomponent implements OnInit {
 
   constructor(
     private userservice: UserService,
+
+    //last update
+    // private accountService:Accountsservice,
+    
     private router: Router,
     private cdr: ChangeDetectorRef
   ) { }
@@ -32,8 +38,13 @@ export class Viewallusercomponent implements OnInit {
   }
 
   deleteUser(id: string): void {
+
+    // this.accountService.deleteAccount(id); //last update "sir evabe dile sudhu id delete hoy bakita delete hoy na"
+
+
     this.userservice.deleteUser(id).subscribe({
       next: () => {
+        
         console.log('User deleted');
         this.loadData();
         this.cdr.markForCheck();
@@ -47,6 +58,7 @@ export class Viewallusercomponent implements OnInit {
   }
 
   getUserById(id: string): void {
+    // this.accountService.getAccountsByUserId(id);
     this.userservice.getUserById(id).subscribe({
 
       next: (res) => {

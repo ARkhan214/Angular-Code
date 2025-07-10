@@ -11,6 +11,7 @@
             <tr>
                 <th>ID</th>
                 <th>User Id</th>
+                <th>User Name</th>
                 <th>Type</th>
                 <th>Balance</th>
                 <th>Action</th>
@@ -22,6 +23,7 @@
                 <tr *ngFor="let a of account | async">
                     <td>{{a.id}}</td>
                     <td>{{a.userId}}</td>
+                    <td>{{ a.userName }}</td>
                     <td>{{a.type}}</td>                  
                     <td>{{a.balance}}</td>                  
                  

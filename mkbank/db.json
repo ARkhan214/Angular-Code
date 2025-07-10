@@ -11,6 +11,18 @@
       "name": "Reja",
       "email": "reja@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "cf3d",
+      "name": "Raj",
+      "email": "raj@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "28fd",
+      "name": "Taj",
+      "email": "taj@gmail.com",
+      "password": "1234"
     }
   ],
   "accounts": [
@@ -25,7 +37,26 @@
       "userId": "3bd1",
       "type": "savings",
       "balance": 200000
+    },
+    {
+      "id": "4585",
+      "userId": "cf3d",
+      "userName": "Raj",
+      "type": "savings",
+      "balance": 1000
+    },
+    {
+      "id": "f630",
+      "userId": "28fd",
+      "userName": "Taj",
+      "type": "savings",
+      "balance": 300
     }
   ],
-  "transactions": []
+  "transactions": [
+    
+  ],
+  "deposit":[
+
+  ]
 }

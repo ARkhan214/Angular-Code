@@ -13,8 +13,10 @@ private baseUrl: string = "http://localhost:3000/user";
     private http:HttpClient
   ) { }
 
-  getAllUser(): Observable<User>{
-  return this.http.get<User>(this.baseUrl);
+//user[] last update
+
+  getAllUser(): Observable<User[]>{
+  return this.http.get<User[]>(this.baseUrl);
 }
 
 saveAllUser(alluser:User): Observable<any>{
@@ -25,8 +27,10 @@ deleteUser(id:string): Observable<any>{
 return this.http.delete(this.baseUrl+'/'+id);
 }
 
-getUserById(id:string):Observable<any>{
-  return this.http.get(this.baseUrl+'/'+id);
+//last update user[]
+
+getUserById(id:string):Observable<User[]>{
+  return this.http.get<User[]>(this.baseUrl+'/'+id);
 }
 
 updateUser(id:string,user:User):Observable<any>{

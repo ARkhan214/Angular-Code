@@ -14,13 +14,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { Updateusercomponent } from './components/updateusercomponent/updateusercomponent';
 import { ViewAllAccounts } from './components/view-all-accounts/view-all-accounts';
+import { DepositComponent } from './components/deposit-component/deposit-component';
 
 @NgModule({
   declarations: [
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent
   ],
   imports: [
     BrowserModule,

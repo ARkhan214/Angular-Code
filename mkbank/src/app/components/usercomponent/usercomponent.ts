@@ -42,6 +42,7 @@ export class Usercomponent implements OnInit {
       this.userService.saveAllUser(newUser).subscribe(savedUser => {
         const newAccount: Accounts = {
           userId: savedUser.id!,
+          userName:savedUser.name,  //last update
           type,
           balance: +balance
         };
