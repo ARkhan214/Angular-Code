@@ -48,8 +48,8 @@ export class Usercomponent implements OnInit {
         };
 
         this.accountService.addAccount(newAccount).subscribe(savedAccount => {
-          console.log('✅ User saved:', savedUser);
-          console.log('✅ Account saved:', savedAccount);
+          console.log(' User saved:', savedUser);
+          console.log(' Account saved:', savedAccount);
           this.userAccountForm.reset();
         });
       });

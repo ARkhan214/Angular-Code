@@ -34,7 +34,8 @@ export class Accountsservice {
 
 //withdraw
 
-  withdrawFromAccount(id: string, amount: number): Observable<any> {
+  withdrawFromAccount(id: string, amount: number): Observable<any> { 
+
   const url = `${this.apiUrl}/${id}`;
   return this.http.get<Accounts>(url).pipe(
     switchMap(account => {

@@ -1,42 +1,40 @@
-<p>viewallusercomponent works!</p>
-<div class="container px-0 border border-danger rounded">
+<p class="text-primary fw-semibold mb-3">viewallusercomponent works!</p>
 
+<div class="container px-0 border border-danger rounded shadow-sm bg-white p-3">
 
+  <h1 class="text-white text-center py-3 rounded" style="background: linear-gradient(to right, #0072ff, #00c6ff); font-weight: bold;">
+    <i class="fa fa-users me-2"></i>All User Details
+  </h1>
 
-    <h1 class="text-warning text-center bg-success"><i class="fa fa-users me-1"></i>All User Details</h1> 
+  <table class="table table-striped table-hover table-bordered text-center align-middle shadow-sm mt-3">
 
-    <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Action</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-                <tr *ngFor="let u of user | async">
-                    <td>{{u.id}}</td>
-                    <td>{{u.name}}</td>
-                    <td>{{u.email}}</td>                  
-                 
-                                      
-                    <td>
-                      
-                        <button  class="btn btn-success" style="margin-left: 5px;" (click)="getUserById(u.id)">Edit</button>
+    <tbody>
+      <tr *ngFor="let u of user | async">
+        <td>{{ u.id }}</td>
+        <td class="text-info fw-semibold">{{ u.name }}</td>
+        <td><i class="fa fa-envelope me-1 text-muted"></i>{{ u.email }}</td>
 
-                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="deleteUser(u.id)" >Delete</button>
-                        
+        <td>
+          <button class="btn btn-outline-success btn-sm me-2" (click)="getUserById(u.id)">
+            <i class="fa fa-edit"></i> Edit
+          </button>
 
-                    </td>
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteUser(u.id)">
+            <i class="fa fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
 
-                </tr>
-
-           
-
-        </tbody>
-    </table>
+  </table>
 
 </div>

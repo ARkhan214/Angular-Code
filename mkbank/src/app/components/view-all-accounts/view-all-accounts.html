@@ -1,47 +1,47 @@
-<p>view-all-accounts works!</p>
-<div class="container px-0 border border-danger rounded">
+<div class="container my-4 p-4 bg-light border border-success rounded shadow-sm">
 
+  <h1 class="text-center text-white py-3 rounded mb-4" style="background: linear-gradient(to right, #00c6ff, #0072ff); font-weight: bold;">
+    <i class="fa fa-users me-2"></i> All Account Details
+  </h1>
 
+  <table class="table table-hover table-bordered table-striped text-center align-middle shadow">
+    <thead class="table-success">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">User ID</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Type</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of account | async">
+        <td>{{ a.id }}</td>
+        <td>{{ a.userId }}</td>
+        <td>{{ a.userName }}</td>
+        <td>
+          <span [ngClass]="{
+            'badge bg-info text-dark': a.type === 'Savings',
+            'badge bg-warning text-dark': a.type === 'Current',
+            'badge bg-secondary': a.type !== 'Savings' && a.type !== 'Current'
+          }">{{ a.type }}</span>
+        </td>
+        <td><strong class="text-success">৳{{ a.balance }}</strong></td>
+        <td>
+          <button class="btn btn-outline-primary btn-sm me-2">
+            <i class="fa fa-edit"></i> Edit
+          </button>
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteAccount(a.id)">
+            <i class="fa fa-trash"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-    <h1 class="text-warning text-center bg-success"><i class="fa fa-users me-1"></i>All Account Details</h1> 
-
-    <table class="table table-striped">
-
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>User Id</th>
-                <th>User Name</th>
-                <th>Type</th>
-                <th>Balance</th>
-                <th>Action</th>
-                
-
-            </tr>
-        </thead>
-        <tbody>
-                <tr *ngFor="let a of account | async">
-                    <td>{{a.id}}</td>
-                    <td>{{a.userId}}</td>
-                    <td>{{ a.userName }}</td>
-                    <td>{{a.type}}</td>                  
-                    <td>{{a.balance}}</td>                  
-                 
-                                      
-                    <td>
-                      
-                        <button  class="btn btn-success" style="margin-left: 5px;" >Edit</button>
-
-                        <button  class="btn btn-danger" style="margin-left: 5px;" (click)="deleteAccount(a.id)" >Delete</button>
-                        
-
-                    </td>
-
-                </tr>
-
-           
-
-        </tbody>
-    </table>
+  <!-- <div *ngIf="(account | async)?.length === 0" class="alert alert-info text-center mt-4">
+    No accounts found!
+  </div> -->
 
 </div>

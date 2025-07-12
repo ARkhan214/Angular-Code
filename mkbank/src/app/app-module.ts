@@ -17,13 +17,15 @@ import { ViewAllAccounts } from './components/view-all-accounts/view-all-account
 import { DepositComponent } from './components/deposit-component/deposit-component';
 import { WithdrawComponent } from './components/withdraw-component/withdraw-component';
 import { TransactionComponent } from './components/transaction-component/transaction-component';
+import { AboutBank } from './layout/about-bank/about-bank';
+
 
 @NgModule({
   declarations: [
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank,
   ],
   imports: [
     BrowserModule,

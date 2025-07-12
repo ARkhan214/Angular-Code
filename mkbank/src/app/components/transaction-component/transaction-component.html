@@ -1,1 +1,44 @@
 <p>transaction-component works!</p>
+<div class="container mt-5">
+  <h2 class="text-2xl font-bold mb-4 text-center text-indigo-700">
+    <i class="fa fa-history me-2"></i>Transaction History
+  </h2>
+
+  <div *ngIf="transactions.length === 0" class="alert alert-info text-center">
+    No transactions found.
+  </div>
+
+  <table *ngIf="transactions.length > 0" class="table table-hover table-bordered border shadow">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Account ID</th>
+        <th>Account Name</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Date & Time</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let txn of transactions; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ txn.accountId }}</td>
+        <td>{{ txn.accountName }}</td>
+        <td>
+          <span [ngClass]="{
+            'text-success fw-bold': txn.type === 'Deposit',
+            'text-danger fw-bold': txn.type === 'Withdraw'
+          }">{{ txn.type | titlecase }}</span>
+        </td>
+        <td>৳{{ txn.amount }}</td>
+        <td>{{ txn.transactiontime | date: 'medium' }}</td>
+        <td>
+          <button (click)="deleteTransaction(txn.id)" class="btn btn-danger btn-sm">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

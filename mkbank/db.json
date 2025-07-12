@@ -35,6 +35,18 @@
       "name": "Sadier Rahman",
       "email": "sadier@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "501a",
+      "name": "fariha",
+      "email": "fariha@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "c44b",
+      "name": "Babu",
+      "email": "babu@gmail.com",
+      "password": "123"
     }
   ],
   "accounts": [
@@ -42,7 +54,7 @@
       "id": "7f55",
       "userId": "5395",
       "type": "savings",
-      "balance": 1200
+      "balance": 2150
     },
     {
       "id": "1f84",
@@ -77,14 +89,76 @@
       "userName": "Sadier Rahman",
       "type": "Customer",
       "balance": 670
+    },
+    {
+      "id": "4289",
+      "userId": "501a",
+      "userName": "fariha",
+      "type": "Customer",
+      "balance": 4430100
+    },
+    {
+      "id": "8ae3",
+      "userId": "c44b",
+      "userName": "Babu",
+      "type": "Customer",
+      "balance": 1000
     }
   ],
-  "transactions": [],
+  "transactions": [
+    {
+      "id": "",
+      "accountId": "7f55",
+      "type": "Withdraw",
+      "amount": 500,
+      "transactiontime": "2025-07-11T07:04:57.774Z"
+    },
+    {
+      "id": "",
+      "accountId": "7f55",
+      "type": "Deposit",
+      "amount": 1000,
+      "transactiontime": "2025-07-11T07:06:06.513Z"
+    },
+    {
+      "id": "",
+      "accountId": "7f55",
+      "accountName": "",
+      "type": "Withdraw",
+      "amount": 550,
+      "transactiontime": "2025-07-11T09:04:27.171Z"
+    },
+    {
+      "id": "",
+      "accountId": "7f55",
+      "accountName": "",
+      "type": "Deposit",
+      "amount": 1000,
+      "transactiontime": "2025-07-11T09:07:32.799Z"
+    },
+    {
+      "id": "",
+      "accountId": "7f55",
+      "accountName": "",
+      "type": "Withdraw",
+      "amount": 500,
+      "transactiontime": "2025-07-11T09:13:04.615Z"
+    },
+    {
+      "id": "",
+      "accountId": "7f55",
+      "accountName": "",
+      "type": "Deposit",
+      "amount": 500,
+      "transactiontime": "2025-07-11T10:04:55.993Z"
+    }
+  ],
   "deposit": [
     {
       "accountId": "5395",
       "amount": "150",
-      "transactionDate": "2025-7-10"
+      "transactionDate": "2025-7-10",
+      "id": "4d3c"
     }
   ],
   "withdraw": [
@@ -127,6 +201,40 @@
       "transactionDate": "2025-07-10",
       "transactionId": "123",
       "description": "self"
+    },
+    {
+      "id": "50cd",
+      "accountId": "4289",
+      "amount": 570000,
+      "transactionDate": "2025-07-10",
+      "transactionId": "123",
+      "description": "for skincare"
+    },
+    {
+      "id": "b5c7",
+      "accountId": "7f55",
+      "amount": 500,
+      "transactionDate": "2025-07-11",
+      "transactionId": "123",
+      "description": "me"
+    },
+    {
+      "id": "3a2a",
+      "accountId": "7f55",
+      "accountName": "",
+      "amount": 550,
+      "transactionDate": "2025-07-11",
+      "transactionId": "123",
+      "description": "food"
+    },
+    {
+      "id": "39b3",
+      "accountId": "7f55",
+      "accountName": "",
+      "amount": 500,
+      "transactionDate": "2025-07-11",
+      "transactionId": "123",
+      "description": "me"
     }
   ]
 }
