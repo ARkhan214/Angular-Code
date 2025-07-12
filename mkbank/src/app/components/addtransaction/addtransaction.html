@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h3>Add Transaction (Manual Account ID)</h3>
+
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label>Account ID</label>
+      <input type="text" class="form-control" formControlName="accountId" />
+    </div>
+
+    <div class="mb-3">
+      <label>Transaction Type</label>
+      <select class="form-select" formControlName="type">
+        <option value="">-- Select --</option>
+        <option value="Deposit">Deposit</option>
+        <option value="Withdraw">Withdraw</option>
+
+        <!-- last update -->
+        <!-- <option value="Transfer">Transfer</option>    -->
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Amount</label>
+      <input type="number" class="form-control" formControlName="amount" />
+    </div>
+
+    <div class="mb-3">
+      <label>Description</label>
+      <textarea class="form-control" formControlName="description"></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="transactionForm.invalid"
+    >
+      Submit Transaction
+    </button>
+  </form>
+</div>

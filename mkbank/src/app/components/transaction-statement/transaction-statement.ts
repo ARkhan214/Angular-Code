@@ -1,0 +1,69 @@
+import { ChangeDetectorRef, Component } from '@angular/core';
+import { Transaction } from '../../model/transactions.model';
+import { Transactionsservice } from '../../service/transactionsservice';
+
+declare var html2pdf: any;
+
+
+@Component({
+  selector: 'app-transaction-statement',
+  standalone: false,
+  templateUrl: './transaction-statement.html',
+  styleUrl: './transaction-statement.css'
+})
+export class TransactionStatement {
+
+   accountId: string = '';
+  transactions: Transaction[] = [];
+  errorMessage: string = '';
+  loading = false;
+
+  constructor(private transactionService: Transactionsservice, private cd: ChangeDetectorRef) {}
+
+  findStatement(): void {
+    if (!this.accountId.trim()) {
+      this.errorMessage = 'Please enter an Account ID.';
+      this.transactions = [];
+      return;
+    }
+
+    this.loading = true;
+    this.errorMessage = '';
+    this.transactions = [];
+
+    this.transactionService.getTransactionsByAccountId(this.accountId).subscribe({
+      next: (result) => {
+        this.loading = false;
+        if (result.length === 0) {
+          this.errorMessage = 'No transactions found for this Account ID.';
+        } else {
+          this.transactions = result;
+          this.cd.detectChanges();
+        }
+      },
+      error: (err) => {
+        console.error(err);
+        this.loading = false;
+        this.errorMessage = 'Error fetching statement.';
+      }
+    });
+  }
+
+  printStatement(): void {
+    const element = document.getElementById('statementTable');
+    const opt = {
+      margin: 0.5,
+      filename: `account-statement-${this.accountId}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    if (element) {
+      html2pdf().set(opt).from(element).save();
+    } else {
+      alert('Nothing to print!');
+    }
+  }
+
+}

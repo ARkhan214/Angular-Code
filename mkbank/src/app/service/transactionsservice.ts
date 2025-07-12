@@ -1,42 +1,106 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Transaction } from '../model/transactions.model';
-import { forkJoin, map, Observable, switchMap } from 'rxjs';
+import { forkJoin, map, Observable, switchMap, throwError } from 'rxjs';
 import { Accountsservice } from './accountsservice';
+import { Accounts } from '../model/accounts.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class Transactionsservice {
-  private baseUrl:string = "http://localhost:3000/transactions"
 
-  constructor(
-    private http:HttpClient,
-     private accountService: Accountsservice   //chat gpt
-  ) { }
 
-  logTransaction(txn: Transaction): Observable<Transaction> {
-    return this.http.post<Transaction>(this.baseUrl, txn);
+  private accountsUrl = 'http://localhost:3000/accounts'; // JSON server URL
+  private transactionsUrl = 'http://localhost:3000/transactions';
+
+  constructor(private http: HttpClient) { }
+
+  addTransactionWithBalance(transaction: Transaction): Observable<any> {
+    const accountId = transaction.accountId;
+
+    return this.http.get<Accounts>(`${this.accountsUrl}/${accountId}`).pipe(
+      switchMap(account => {
+        if (!account) {
+          return throwError(() => new Error('Account not found!'));
+        }
+
+        let newBalance = account.balance || 0;
+
+        if (transaction.type === 'Deposit') {
+          newBalance += transaction.amount;
+        } else if (transaction.type === 'Withdraw') {
+          if (transaction.amount > newBalance) {
+            return throwError(() => new Error('Insufficient balance!'));
+          }
+          newBalance -= transaction.amount;
+        }
+        // last update
+        // else if (transaction.type === 'Transfer') {
+        //   if (transaction.amount > newBalance) {
+        //     return throwError(() => new Error('Insufficient balance!'));
+        //   }
+        //   newBalance -= transaction.amount;
+        // }
+
+        // Update account balance
+        const updatedAccount: Accounts = { ...account, balance: newBalance };
+
+        return this.http.put<Accounts>(`${this.accountsUrl}/${accountId}`, updatedAccount).pipe(
+          switchMap(() => {
+            return this.http.post<Transaction>(this.transactionsUrl, transaction);
+          })
+        );
+      })
+    );
   }
-   saveTransaction(transaction: Transaction): Observable<Transaction> {
-    return this.http.post<Transaction>(this.baseUrl, transaction);
-  }
 
-  getAllTransactions(): Observable<Transaction[]> {
-    return this.http.get<Transaction[]>(this.baseUrl);
-  }
 
-  getTransactionById(id: string): Observable<Transaction> {
-    return this.http.get<Transaction>(`${this.baseUrl}/${id}`);
+
+ getTransactionsByAccountId(accountId: string): Observable<Transaction[]> {
+    // JSON server supports ?accountId=XYZ
+    const params = new HttpParams().set('accountId', accountId);
+    return this.http.get<Transaction[]>(this.transactionsUrl, { params });
   }
 
 
-  deleteTransaction(id: string): Observable<any> {
-  return this.http.delete<any>(`${this.baseUrl}/${id}`);
-}
 
 
-  
+  //   private baseUrl:string = "http://localhost:3000/transactions"
+
+  //   constructor(
+  //     private http:HttpClient,
+  //      private accountService: Accountsservice   //chat gpt
+  //   ) { }
+
+  //   logTransaction(txn: Transaction): Observable<Transaction> {
+  //     return this.http.post<Transaction>(this.baseUrl, txn);
+  //   }
+  //    saveTransaction(transaction: Transaction): Observable<Transaction[]> {
+  //     return this.http.post<Transaction[]>(this.baseUrl, transaction);
+  //   }
+
+  // //   saveTransaction(transaction: Transaction): Observable<Transaction> {
+  // //   const { id, ...rest } = transaction; // remove id if exists
+  // //   return this.http.post<Transaction>(this.baseUrl, rest);
+  // // }
+
+
+  //   getAllTransactions(): Observable<Transaction[]> {
+  //     return this.http.get<Transaction[]>(this.baseUrl);
+  //   }
+
+  //   getTransactionById(id: string): Observable<Transaction> {
+  //     return this.http.get<Transaction>(`${this.baseUrl}/${id}`);
+  //   }
+
+
+  //   deleteTransaction(id: string): Observable<any> {
+  //   return this.http.delete(`${this.baseUrl}/${id}`);
+  // }
+
+
+
   // limon bhi er code modifi
 
   // private baseTransferUrl = 'http://localhost:3000/fundTransfers';

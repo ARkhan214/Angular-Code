@@ -1,0 +1,50 @@
+<div class="container mt-4">
+  <h3>Find Account Statement</h3>
+
+  <div class="mb-3">
+    <label>Account ID:</label>
+    <input
+      type="text"
+      [(ngModel)]="accountId"
+      class="form-control"
+      placeholder="Enter Account ID"
+    />
+  </div>
+
+  <button class="btn btn-primary mb-3" (click)="findStatement()">Find</button>
+
+  <div *ngIf="loading">Loading...</div>
+  <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
+
+  <div id="statementTable">
+    <table *ngIf="transactions.length > 0" class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Description</th>
+          <th>Transaction Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of transactions">
+          <td>{{ t.id }}</td>
+          <td>{{ t.type }}</td>
+          <td>{{ t.amount }}</td>
+          <td>{{ t.description }}</td>
+          <td>{{ t.transactiontime | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ✅ Print Button -->
+  <button
+    class="btn btn-success"
+    *ngIf="transactions.length > 0"
+    (click)="printStatement()"
+  >
+    Print Statement as PDF
+  </button>
+</div>

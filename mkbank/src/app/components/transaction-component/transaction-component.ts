@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Transactionsservice } from '../../service/transactionsservice';
 import { Transaction } from '../../model/transactions.model';
+import { Accounts } from '../../model/accounts.model';
 
 @Component({
   selector: 'app-transaction-component',
@@ -9,43 +10,49 @@ import { Transaction } from '../../model/transactions.model';
   styleUrl: './transaction-component.css'
 })
 export class TransactionComponent implements OnInit{
-
-transactions: Transaction[] = [];
-
-  constructor(
-    private transactionService:Transactionsservice,
-    private cdr: ChangeDetectorRef
-  ){}
-
   ngOnInit(): void {
-   this.loadTransactions();
+    throw new Error('Method not implemented.');
   }
 
-  loadTransactions(): void {
-    this.transactionService.getAllTransactions().subscribe({
-      next: (data) => {
-        this.transactions = data;
-        this.cdr.markForCheck();
-      },
-      error: (err) => {
-        console.error('Failed to load transactions:', err);
-      }
-    });
-  }
+// transactions: Transaction[] = [];
+// acounts: Accounts[] =[];
+// // transactions: any;
+
+//   constructor(
+//     private transactionService:Transactionsservice,
+//     private cdr: ChangeDetectorRef
+//   ){}
+
+//   ngOnInit(): void {
+//    this.loadTransactions();
+//   }
+
+//   loadTransactions(): void {
+//     this.transactionService.getAllTransactions().subscribe({
+//       next: (data) => {
+//         this.transactions = data;
+//         this.cdr.markForCheck();
+//       },
+//       error: (err) => {
+//         console.error('Failed to load transactions:', err);
+//       }
+//     });
+//   }
 
 
-deleteTransaction(id: string): void {
-  this.transactionService.deleteTransaction(id).subscribe({
-    next: () => {
-      console.log('Transaction deleted');
-      this.loadTransactions();
-      this.cdr.markForCheck();
-    },
-    error: (err) => {
-      console.log('Error deleting Transaction: ', err);
-    }
-  });
-}
+// deleteTransaction(id: string): void {
+//   this.transactionService.deleteTransaction(id).subscribe({
+//     next: () => {
+//       console.log('Transaction deleted');
+//       this.loadTransactions();
+//       this.cdr.markForCheck();
+//       // this.cdr.reattach();
+//     },
+//     error: (err) => {
+//       console.log('Error deleting Transaction: ', err);
+//     }
+//   });
+// }
 
 
 

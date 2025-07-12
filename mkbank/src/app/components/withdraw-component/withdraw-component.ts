@@ -13,78 +13,81 @@ import { Transaction } from '../../model/transactions.model';
   styleUrl: './withdraw-component.css'
 })
 export class WithdrawComponent implements OnInit {
-
-  formGroup !: FormGroup;
-
-  constructor(
-    private formBuilder: FormBuilder,
-    private withdrawService: WithdrawService,
-    private transactionService: Transactionsservice,
-    private accountService: Accountsservice
-  ) { }
-
   ngOnInit(): void {
-    this.formGroup = this.formBuilder.group({
-      accountId: [''],
-      accountName: [''],  //last update for show name in transaction table
-      amount: [''],
-      transactionDate: [new Date()],
-      transactionId: [''],
-      description: ['']
-    })
+    throw new Error('Method not implemented.');
   }
 
-  withdraw(): void {
-    const withdrawData: Withdraw = this.formGroup.value;
-    const accountName = this.formGroup.value.accountName;  //last update for show name in transaction table
+  // formGroup !: FormGroup;
 
-    this.accountService.withdrawFromAccount(withdrawData.accountId, withdrawData.amount,).subscribe({
-      next: () => {
+  // constructor(
+  //   private formBuilder: FormBuilder,
+  //   private withdrawService: WithdrawService,
+  //   private transactionService: Transactionsservice,
+  //   private accountService: Accountsservice
+  // ) { }
 
-        this.withdrawService.saveWithdraw(withdrawData).subscribe({
-          next: () => {
+  // ngOnInit(): void {
+  //   this.formGroup = this.formBuilder.group({
+  //     accountId: [''],
+  //     accountName: [''],  //last update for show name in transaction table
+  //     amount: [''],
+  //     transactionDate: [new Date()],
+  //     transactionId: [''],
+  //     description: ['']
+  //   })
+  // }
 
-            // Transaction log  start
-            const txn: Transaction = {
-              id: '',
-              accountId: withdrawData.accountId,
-              accountName: accountName,   //last update for show name in transaction table
-              type: 'Withdraw',
-              amount: withdrawData.amount,
-              transactiontime: new Date()
-            };
+  // withdraw(): void {
+  //   const withdrawData: Withdraw = this.formGroup.value;
+  //   const accountName = this.formGroup.value.accountName;  //last update for show name in transaction table
 
-            this.transactionService.logTransaction(txn).subscribe({
-              next: () => {
-                console.log('Transaction logged.');
-                alert('Withdraw Successful and Transaction Logged');
-                this.formGroup.reset();
-              },
-              error: () => {
-                console.error('Transaction log failed.');
-                alert('Withdraw success but transaction logging failed.');
-              }
-            });
-            // Transaction log  end
+  //   this.accountService.withdrawFromAccount(withdrawData.accountId, withdrawData.amount,).subscribe({
+  //     next: () => {
+
+  //       this.withdrawService.saveWithdraw(withdrawData).subscribe({
+  //         next: () => {
+
+  //           // Transaction log  start
+  //           const txn: Transaction = {
+  //             id: '',
+  //             accountId: withdrawData.accountId,
+  //             accountName: accountName,   //last update for show name in transaction table
+  //             type: 'Withdraw',
+  //             amount: withdrawData.amount,
+  //             transactiontime: new Date()
+  //           };
+
+  //           this.transactionService.logTransaction(txn).subscribe({
+  //             next: () => {
+  //               console.log('Transaction logged.');
+  //               alert('Withdraw Successful and Transaction Logged');
+  //               this.formGroup.reset();
+  //             },
+  //             error: () => {
+  //               console.error('Transaction log failed.');
+  //               alert('Withdraw success but transaction logging failed.');
+  //             }
+  //           });
+  //           // Transaction log  end
 
 
-            // alert('Withdraw Successful');
-            // this.formGroup.reset();
+  //           // alert('Withdraw Successful');
+  //           // this.formGroup.reset();
 
 
-          },
-          error: (err) => {
-            console.error('Withdraw save failed:', err);
-            alert('Withdraw save failed!');
-          }
-        });
-      },
-      error: (err) => {
-        console.error('Account withdraw failed:', err);
-        alert(err.message || 'Withdraw failed from account');
-      }
-    });
-  }
+  //         },
+  //         error: (err) => {
+  //           console.error('Withdraw save failed:', err);
+  //           alert('Withdraw save failed!');
+  //         }
+  //       });
+  //     },
+  //     error: (err) => {
+  //       console.error('Account withdraw failed:', err);
+  //       alert(err.message || 'Withdraw failed from account');
+  //     }
+  //   });
+  // }
 
 
 

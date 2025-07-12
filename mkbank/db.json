@@ -1,156 +1,82 @@
 {
   "user": [
     {
-      "id": "5395",
-      "name": "MD RAHIM KHAN",
-      "email": "abdurrahimkhan214@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "3bd1",
+      "id": "c7fa",
       "name": "Reja",
       "email": "reja@gmail.com",
       "password": "1234"
     },
     {
-      "id": "cf3d",
-      "name": "Raj",
-      "email": "raj@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "28fd",
-      "name": "Taj",
-      "email": "taj@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "01e9",
-      "name": "Atiqul Islam",
-      "email": "atiqIslam@gmail.com",
+      "id": "3063",
+      "name": "Sadier",
+      "email": "sadia@gmail.com",
       "password": "12345"
-    },
-    {
-      "id": "3ef2",
-      "name": "Sadier Rahman",
-      "email": "sadier@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "501a",
-      "name": "fariha",
-      "email": "fariha@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "c44b",
-      "name": "Babu",
-      "email": "babu@gmail.com",
-      "password": "123"
     }
   ],
   "accounts": [
     {
-      "id": "7f55",
-      "userId": "5395",
-      "type": "savings",
-      "balance": 2150
+      "id": "1234",
+      "userId": "c7fa",
+      "userName": "Reja",
+      "type": "user",
+      "balance": 11334
     },
     {
-      "id": "1f84",
-      "userId": "3bd1",
-      "type": "savings",
-      "balance": 199945
-    },
-    {
-      "id": "4585",
-      "userId": "cf3d",
-      "userName": "Raj",
-      "type": "savings",
-      "balance": 1220
-    },
-    {
-      "id": "f630",
-      "userId": "28fd",
-      "userName": "Taj",
-      "type": "savings",
-      "balance": 300
-    },
-    {
-      "id": "4ce9",
-      "userId": "01e9",
-      "userName": "Atiqul Islam",
-      "type": "savings",
-      "balance": 25000
-    },
-    {
-      "id": "39ea",
-      "userId": "3ef2",
-      "userName": "Sadier Rahman",
-      "type": "Customer",
-      "balance": 670
-    },
-    {
-      "id": "4289",
-      "userId": "501a",
-      "userName": "fariha",
-      "type": "Customer",
-      "balance": 4430100
-    },
-    {
-      "id": "8ae3",
-      "userId": "c44b",
-      "userName": "Babu",
-      "type": "Customer",
-      "balance": 1000
+      "id": "0e59",
+      "userId": "3063",
+      "userName": "Sadier",
+      "type": "user",
+      "balance": 11045
     }
   ],
   "transactions": [
     {
-      "id": "",
-      "accountId": "7f55",
-      "type": "Withdraw",
-      "amount": 500,
-      "transactiontime": "2025-07-11T07:04:57.774Z"
-    },
-    {
-      "id": "",
-      "accountId": "7f55",
+      "id": "83ce",
       "type": "Deposit",
-      "amount": 1000,
-      "transactiontime": "2025-07-11T07:06:06.513Z"
+      "amount": 5000,
+      "description": "s",
+      "transactiontime": "2025-07-12T12:21:28.155Z",
+      "accountId": "1234"
     },
     {
-      "id": "",
-      "accountId": "7f55",
-      "accountName": "",
-      "type": "Withdraw",
-      "amount": 550,
-      "transactiontime": "2025-07-11T09:04:27.171Z"
-    },
-    {
-      "id": "",
-      "accountId": "7f55",
-      "accountName": "",
+      "id": "e417",
       "type": "Deposit",
-      "amount": 1000,
-      "transactiontime": "2025-07-11T09:07:32.799Z"
+      "amount": 2000,
+      "description": "asdf",
+      "transactiontime": "2025-07-12T12:42:52.907Z",
+      "accountId": "1234"
     },
     {
-      "id": "",
-      "accountId": "7f55",
-      "accountName": "",
+      "id": "02fa",
       "type": "Withdraw",
-      "amount": 500,
-      "transactiontime": "2025-07-11T09:13:04.615Z"
+      "amount": 1666,
+      "description": "fdsa",
+      "transactiontime": "2025-07-12T12:43:18.721Z",
+      "accountId": "1234"
     },
     {
-      "id": "",
-      "accountId": "7f55",
-      "accountName": "",
+      "id": "840b",
+      "type": "Deposit",
+      "amount": 1100,
+      "description": "sadier jama kinbo",
+      "transactiontime": "2025-07-12T12:47:05.729Z",
+      "accountId": "0e59"
+    },
+    {
+      "id": "81d4",
+      "type": "Withdraw",
+      "amount": 555,
+      "description": "ds",
+      "transactiontime": "2025-07-12T12:51:10.833Z",
+      "accountId": "0e59"
+    },
+    {
+      "id": "ae23",
       "type": "Deposit",
       "amount": 500,
-      "transactiontime": "2025-07-11T10:04:55.993Z"
+      "description": "sa",
+      "transactiontime": "2025-07-12T13:25:36.174Z",
+      "accountId": "0e59"
     }
   ],
   "deposit": [
@@ -164,7 +90,7 @@
   "withdraw": [
     {
       "id": "21d3",
-      "accountId": "7f55",
+      "accountId": null,
       "amount": 300,
       "transactionDate": "2025-07-10",
       "transactionId": "123",
@@ -172,7 +98,7 @@
     },
     {
       "id": "c846",
-      "accountId": "1f84",
+      "accountId": null,
       "amount": 555,
       "transactionDate": "2025-07-10",
       "transactionId": "123",
@@ -180,7 +106,7 @@
     },
     {
       "id": "1413",
-      "accountId": "4ce9",
+      "accountId": null,
       "amount": 10000,
       "transactionDate": "2025-07-10",
       "transactionId": "123",
@@ -188,7 +114,7 @@
     },
     {
       "id": "f9ab",
-      "accountId": "39ea",
+      "accountId": null,
       "amount": 500,
       "transactionDate": "2025-07-10",
       "transactionId": "123",
@@ -196,7 +122,7 @@
     },
     {
       "id": "d5b0",
-      "accountId": "39ea",
+      "accountId": null,
       "amount": 5000,
       "transactionDate": "2025-07-10",
       "transactionId": "123",
@@ -204,7 +130,7 @@
     },
     {
       "id": "50cd",
-      "accountId": "4289",
+      "accountId": null,
       "amount": 570000,
       "transactionDate": "2025-07-10",
       "transactionId": "123",
@@ -212,7 +138,7 @@
     },
     {
       "id": "b5c7",
-      "accountId": "7f55",
+      "accountId": null,
       "amount": 500,
       "transactionDate": "2025-07-11",
       "transactionId": "123",
@@ -220,7 +146,7 @@
     },
     {
       "id": "3a2a",
-      "accountId": "7f55",
+      "accountId": null,
       "accountName": "",
       "amount": 550,
       "transactionDate": "2025-07-11",
@@ -229,7 +155,7 @@
     },
     {
       "id": "39b3",
-      "accountId": "7f55",
+      "accountId": null,
       "accountName": "",
       "amount": 500,
       "transactionDate": "2025-07-11",

@@ -18,6 +18,8 @@ import { DepositComponent } from './components/deposit-component/deposit-compone
 import { WithdrawComponent } from './components/withdraw-component/withdraw-component';
 import { TransactionComponent } from './components/transaction-component/transaction-component';
 import { AboutBank } from './layout/about-bank/about-bank';
+import { Addtransaction } from './components/addtransaction/addtransaction';
+import { TransactionStatement } from './components/transaction-statement/transaction-statement';
 
 
 @NgModule({
@@ -25,7 +27,7 @@ import { AboutBank } from './layout/about-bank/about-bank';
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank,
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement,
   ],
   imports: [
     BrowserModule,

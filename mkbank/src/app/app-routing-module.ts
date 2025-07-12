@@ -9,6 +9,8 @@ import { DepositComponent } from './components/deposit-component/deposit-compone
 import { WithdrawComponent } from './components/withdraw-component/withdraw-component';
 import { AboutBank } from './layout/about-bank/about-bank';
 import { TransactionComponent } from './components/transaction-component/transaction-component';
+import { Addtransaction } from './components/addtransaction/addtransaction';
+import { TransactionStatement } from './components/transaction-statement/transaction-statement';
 
 const routes: Routes = [
   {path:'',component:Home},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path:'withdraw',component:WithdrawComponent},
   {path:'about',component:AboutBank},
   {path:'transaction',component:TransactionComponent},
+  {path:'addtr',component:Addtransaction},
+  {path:'trst',component:TransactionStatement},
   
 ];
 
