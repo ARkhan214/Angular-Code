@@ -13,10 +13,14 @@
         <option value="">-- Select --</option>
         <option value="Deposit">Deposit</option>
         <option value="Withdraw">Withdraw</option>
-
-        <!-- last update -->
-        <!-- <option value="Transfer">Transfer</option>    -->
+        <option value="Transfer">Transfer</option>   
       </select>
+    </div>
+
+    <!--  Receiver Account ID: Only show when Transfer is selected -->
+    <div class="mb-3" *ngIf="transactionForm.value.type === 'Transfer'">
+      <label>Receiver Account ID</label>
+      <input type="text" class="form-control" formControlName="receiverAccountId" />
     </div>
 
     <div class="mb-3">

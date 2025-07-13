@@ -17,6 +17,12 @@
       "name": "Sakib",
       "email": "sakib@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "68e1",
+      "name": "Rahmat Ullah",
+      "email": "rahmat@gmail.com",
+      "password": "12345"
     }
   ],
   "accounts": [
@@ -25,14 +31,14 @@
       "userId": "c7fa",
       "userName": "Reja",
       "type": "user",
-      "balance": 11334
+      "balance": 8000
     },
     {
       "id": "0e59",
       "userId": "3063",
       "userName": "Sadier",
       "type": "user",
-      "balance": 11000
+      "balance": 7000
     },
     {
       "id": "ef84",
@@ -40,80 +46,33 @@
       "userName": "Sakib",
       "type": "employee",
       "balance": 0
+    },
+    {
+      "id": "b74a",
+      "userId": "68e1",
+      "userName": "Rahmat Ullah",
+      "type": "user",
+      "balance": 12000
     }
   ],
   "transactions": [
     {
-      "id": "83ce",
+      "id": "f145",
+      "type": "Transfer",
+      "amount": 3000,
+      "description": "FFG",
+      "transactiontime": "2025-07-13T13:19:30.287Z",
+      "accountId": "1234",
+      "receiverAccountId": "b74a"
+    },
+    {
+      "id": "8d51",
       "type": "Deposit",
       "amount": 5000,
-      "description": "s",
-      "transactiontime": "2025-07-12T12:21:28.155Z",
-      "accountId": "1234"
-    },
-    {
-      "id": "e417",
-      "type": "Deposit",
-      "amount": 2000,
-      "description": "asdf",
-      "transactiontime": "2025-07-12T12:42:52.907Z",
-      "accountId": "1234"
-    },
-    {
-      "id": "02fa",
-      "type": "Withdraw",
-      "amount": 1666,
-      "description": "fdsa",
-      "transactiontime": "2025-07-12T12:43:18.721Z",
-      "accountId": "1234"
-    },
-    {
-      "id": "840b",
-      "type": "Deposit",
-      "amount": 1100,
-      "description": "sadier jama kinbo",
-      "transactiontime": "2025-07-12T12:47:05.729Z",
-      "accountId": "0e59"
-    },
-    {
-      "id": "81d4",
-      "type": "Withdraw",
-      "amount": 555,
-      "description": "ds",
-      "transactiontime": "2025-07-12T12:51:10.833Z",
-      "accountId": "0e59"
-    },
-    {
-      "id": "ae23",
-      "type": "Deposit",
-      "amount": 500,
-      "description": "sa",
-      "transactiontime": "2025-07-12T13:25:36.174Z",
-      "accountId": "0e59"
-    },
-    {
-      "id": "361c",
-      "type": "Deposit",
-      "amount": 1200,
-      "description": "me",
-      "transactiontime": "2025-07-13T04:32:11.619Z",
-      "accountId": "0e59"
-    },
-    {
-      "id": "8d04",
-      "type": "Withdraw",
-      "amount": 2245,
-      "description": "d",
-      "transactiontime": "2025-07-13T07:33:54.905Z",
-      "accountId": "0e59"
-    },
-    {
-      "id": "50a6",
-      "type": "Deposit",
-      "amount": 1000,
-      "description": "a",
-      "transactiontime": "2025-07-13T07:34:29.502Z",
-      "accountId": "0e59"
+      "description": "FDGDF",
+      "transactiontime": "2025-07-13T13:20:25.991Z",
+      "accountId": "1234",
+      "receiverAccountId": ""
     }
   ],
   "deposit": [

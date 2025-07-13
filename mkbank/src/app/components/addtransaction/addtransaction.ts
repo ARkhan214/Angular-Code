@@ -21,6 +21,7 @@ export class Addtransaction {
   ngOnInit(): void {
     this.transactionForm = this.fb.group({
       accountId: ['', Validators.required],  // ✅ Add field for manual account entry
+      receiverAccountId: [''], // Transfer 
       type: ['', Validators.required],
       amount: [0, [Validators.required, Validators.min(1)]],
       description: ['']
@@ -28,7 +29,8 @@ export class Addtransaction {
   }
 
   onSubmit(): void {
-    if (this.transactionForm.invalid) return;
+    if (this.transactionForm.invalid) 
+      return;
 
     const transaction: Transaction = {
       
@@ -36,7 +38,8 @@ export class Addtransaction {
       amount: this.transactionForm.value.amount,
       description: this.transactionForm.value.description,
       transactiontime: new Date(),
-      accountId: this.transactionForm.value.accountId // ✅ Use manual input
+      accountId: this.transactionForm.value.accountId, // ✅ Use manual input
+      receiverAccountId: this.transactionForm.value.receiverAccountId //Transfer
     };
 
     this.transactionService.addTransactionWithBalance(transaction).subscribe({

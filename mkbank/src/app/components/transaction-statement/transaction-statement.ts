@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { Transaction } from '../../model/transactions.model';
 import { Transactionsservice } from '../../service/transactionsservice';
+import { Accounts } from '../../model/accounts.model';
 
 declare var html2pdf: any;
 
@@ -15,6 +16,7 @@ export class TransactionStatement {
 
    accountId: string = '';
   transactions: Transaction[] = [];
+  // accountInfo: Accounts[] = [];    //new add
   errorMessage: string = '';
   loading = false;
 

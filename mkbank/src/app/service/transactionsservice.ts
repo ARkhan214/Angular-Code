@@ -45,6 +45,41 @@ export class Transactionsservice {
         //   newBalance -= transaction.amount;
         // }
 
+        //new code
+        else if (transaction.type === 'Transfer') {
+  if (transaction.amount > newBalance) {
+    return throwError(() => new Error('Insufficient balance!'));
+  }
+
+  // 1. Sender থেকে টাকা কমাও
+  newBalance -= transaction.amount;
+
+  // 2. Receiver account খুঁজে বের করে তার ব্যালেন্স বাড়াও
+  const receiverId = transaction.receiverAccountId;
+
+  this.http.get<Accounts>(`${this.accountsUrl}/${receiverId}`).subscribe(receiverAccount => {
+    const updatedReceiver = {
+      ...receiverAccount,
+      balance: receiverAccount.balance + transaction.amount
+    };
+
+    // 3. Receiver-এর balance আপডেট করো
+    this.http.put(`${this.accountsUrl}/${receiverId}`, updatedReceiver).subscribe({
+      next: () => {
+        console.log('Receiver balance updated!');
+      },
+      error: err => {
+        console.error('Receiver update failed:', err);
+      }
+    });
+  }, error => {
+    console.error('Receiver not found:', error);
+  });
+}
+
+
+
+
 
         // Update account balance
         const updatedAccount: Accounts = { ...account, balance: newBalance };
