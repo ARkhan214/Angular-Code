@@ -22,6 +22,7 @@
         <tr>
           <th>ID</th>
           <th>Account ID</th>
+          <th>Reciver ID</th>   
            
           <th>Type</th>
           <th>Amount</th>
@@ -33,7 +34,9 @@
         <tr *ngFor="let t of transactions">
           <td>{{ t.id }}</td>
           <td>{{ t.accountId }}</td>
-          
+          <!-- <td>{{ t.receiverAccountId }}</td> -->
+          <td>{{ t.type === 'Deposit' || t.type === 'Withdraw' ? 'Self' : t.receiverAccountId }}</td>
+
           <td>{{ t.type }}</td>
           <td>{{ t.amount }}</td>
           <td>{{ t.description }}</td>

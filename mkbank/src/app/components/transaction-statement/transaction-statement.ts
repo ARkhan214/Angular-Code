@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
 import { Transaction } from '../../model/transactions.model';
 import { Transactionsservice } from '../../service/transactionsservice';
 import { Accounts } from '../../model/accounts.model';
+import { Accountsservice } from '../../service/accountsservice';
 
 declare var html2pdf: any;
 
@@ -20,7 +21,15 @@ export class TransactionStatement {
   errorMessage: string = '';
   loading = false;
 
-  constructor(private transactionService: Transactionsservice, private cd: ChangeDetectorRef) {}
+  //for sender and resiver name
+  // senderNames: { [id: string]: string } = {};
+  // receiverNames: { [id: string]: string } = {};
+
+  constructor(
+    private transactionService: Transactionsservice,
+    //  private accountService: Accountsservice,  //for sender and resiver name
+    private cd: ChangeDetectorRef
+  ) {}
 
   findStatement(): void {
     if (!this.accountId.trim()) {
@@ -35,6 +44,29 @@ export class TransactionStatement {
 
     this.transactionService.getTransactionsByAccountId(this.accountId).subscribe({
       next: (result) => {
+
+
+        //for sender and resiver name
+        
+      //   this.transactions = result;
+      //   // ✅ Fetch sender & receiver names per transaction
+      // for (let tx of this.transactions) {
+      //   // ✅ Sender Name
+      //   this.accountService.getAccountsByUserId(tx.accountId).subscribe(accList => {
+      //     this.senderNames[tx.id!] = accList[0]?.userName || 'Unknown';
+      //     this.cd.detectChanges();
+      //   });
+
+      //   // ✅ Receiver Name (only for Transfer)
+      //   if (tx.receiverAccountId) {
+      //     this.accountService.getAccountsByUserId(tx.receiverAccountId).subscribe(accList => {
+      //       this.receiverNames[tx.id!] = accList[0]?.userName || 'Unknown';
+      //       this.cd.detectChanges();
+      //     });
+      //   }
+      // }
+
+
         this.loading = false;
         if (result.length === 0) {
           this.errorMessage = 'No transactions found for this Account ID.';

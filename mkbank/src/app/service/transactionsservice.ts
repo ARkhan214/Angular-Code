@@ -36,46 +36,36 @@ export class Transactionsservice {
           newBalance -= transaction.amount;
         }
 
-        // last update
-        // else if (transaction.type === 'Transfer') {
-          
-        //   if (transaction.amount > newBalance) {
-        //     return throwError(() => new Error('Insufficient balance!'));
-        //   }
-        //   newBalance -= transaction.amount;
-        // }
-
-        //new code
         else if (transaction.type === 'Transfer') {
-  if (transaction.amount > newBalance) {
-    return throwError(() => new Error('Insufficient balance!'));
-  }
+          if (transaction.amount > newBalance) {
+            return throwError(() => new Error('Insufficient balance!'));
+          }
 
-  // 1. Sender থেকে টাকা কমাও
-  newBalance -= transaction.amount;
+          // Sender balance minus
+          newBalance -= transaction.amount;
 
-  // 2. Receiver account খুঁজে বের করে তার ব্যালেন্স বাড়াও
-  const receiverId = transaction.receiverAccountId;
+          // Find Receiver account and incarage balance
+          const receiverId = transaction.receiverAccountId;
 
-  this.http.get<Accounts>(`${this.accountsUrl}/${receiverId}`).subscribe(receiverAccount => {
-    const updatedReceiver = {
-      ...receiverAccount,
-      balance: receiverAccount.balance + transaction.amount
-    };
+          this.http.get<Accounts>(`${this.accountsUrl}/${receiverId}`).subscribe(receiverAccount => {
+            const updatedReceiver = {
+              ...receiverAccount,
+              balance: receiverAccount.balance + transaction.amount
+            };
 
-    // 3. Receiver-এর balance আপডেট করো
-    this.http.put(`${this.accountsUrl}/${receiverId}`, updatedReceiver).subscribe({
-      next: () => {
-        console.log('Receiver balance updated!');
-      },
-      error: err => {
-        console.error('Receiver update failed:', err);
-      }
-    });
-  }, error => {
-    console.error('Receiver not found:', error);
-  });
-}
+            // update Receiver- balance
+            this.http.put(`${this.accountsUrl}/${receiverId}`, updatedReceiver).subscribe({
+              next: () => {
+                console.log('Receiver balance updated!');
+              },
+              error: err => {
+                console.error('Receiver update failed:', err);
+              }
+            });
+          }, error => {
+            console.error('Receiver not found:', error);
+          });
+        }
 
 
 
@@ -96,10 +86,17 @@ export class Transactionsservice {
 
 
 
-  
+  getTransactionsByAccountId(accountId: string): Observable<Transaction[]> {
+    // JSON server supports ?accountId=XYZ
+    const params = new HttpParams().set('accountId', accountId);
+    return this.http.get<Transaction[]>(this.transactionsUrl, { params });
+  }
+
+
+
 
   //transfer
-addTransferTransaction(transaction: Transaction): Observable<any> {
+  addTransferTransaction(transaction: Transaction): Observable<any> {
     const senderId = transaction.accountId;
     const receiverId = transaction.receiverAccountId;
 
@@ -144,20 +141,6 @@ addTransferTransaction(transaction: Transaction): Observable<any> {
       })
     );
   }
-
-
-
-
-
-
-
-
- getTransactionsByAccountId(accountId: string): Observable<Transaction[]> {
-    // JSON server supports ?accountId=XYZ
-    const params = new HttpParams().set('accountId', accountId);
-    return this.http.get<Transaction[]>(this.transactionsUrl, { params });
-  }
-
 
 
 
