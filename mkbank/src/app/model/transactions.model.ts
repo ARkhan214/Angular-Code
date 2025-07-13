@@ -4,11 +4,13 @@ export class Transaction {
 
 
     id?:string;
-    type!: 'Deposit' | 'Withdraw' | 'Fixed Deposit';
+    type!: 'Deposit' | 'Withdraw' | 'Fixed Deposit' | 'Transfer';
     amount !: number;
     transactiontime !: Date;
     description?: string;
     accountId !: string;
+    //trnsfer
+    receiverAccountId ?: string;
 
     
 

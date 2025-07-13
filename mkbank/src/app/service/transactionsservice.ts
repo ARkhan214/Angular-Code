@@ -35,13 +35,16 @@ export class Transactionsservice {
           }
           newBalance -= transaction.amount;
         }
+
         // last update
         // else if (transaction.type === 'Transfer') {
+          
         //   if (transaction.amount > newBalance) {
         //     return throwError(() => new Error('Insufficient balance!'));
         //   }
         //   newBalance -= transaction.amount;
         // }
+
 
         // Update account balance
         const updatedAccount: Accounts = { ...account, balance: newBalance };
@@ -54,6 +57,63 @@ export class Transactionsservice {
       })
     );
   }
+
+
+
+
+  
+
+  //transfer
+addTransferTransaction(transaction: Transaction): Observable<any> {
+    const senderId = transaction.accountId;
+    const receiverId = transaction.receiverAccountId;
+
+    if (!receiverId) {
+      return throwError(() => new Error('Receiver account ID is missing!'));
+    }
+
+    return this.http.get<Accounts>(`${this.accountsUrl}/${senderId}`).pipe(
+      switchMap(senderAccount => {
+        if (!senderAccount) {
+          return throwError(() => new Error('Sender account not found!'));
+        }
+
+        if (transaction.amount > senderAccount.balance) {
+          return throwError(() => new Error('Insufficient balance!'));
+        }
+
+        return this.http.get<Accounts>(`${this.accountsUrl}/${receiverId}`).pipe(
+          switchMap(receiverAccount => {
+            if (!receiverAccount) {
+              return throwError(() => new Error('Receiver account not found!'));
+            }
+
+            const updatedSender: Accounts = {
+              ...senderAccount,
+              balance: senderAccount.balance - transaction.amount
+            };
+
+            const updatedReceiver: Accounts = {
+              ...receiverAccount,
+              balance: receiverAccount.balance + transaction.amount
+            };
+
+            return forkJoin([
+              this.http.put<Accounts>(`${this.accountsUrl}/${senderId}`, updatedSender),
+              this.http.put<Accounts>(`${this.accountsUrl}/${receiverId}`, updatedReceiver)
+            ]).pipe(
+              switchMap(() => this.http.post<Transaction>(this.transactionsUrl, transaction))
+            );
+          })
+        );
+      })
+    );
+  }
+
+
+
+
+
 
 
 

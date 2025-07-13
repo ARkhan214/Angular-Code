@@ -11,6 +11,12 @@
       "name": "Sadier",
       "email": "sadia@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "7d74",
+      "name": "Sakib",
+      "email": "sakib@gmail.com",
+      "password": "12345"
     }
   ],
   "accounts": [
@@ -26,7 +32,14 @@
       "userId": "3063",
       "userName": "Sadier",
       "type": "user",
-      "balance": 11045
+      "balance": 11000
+    },
+    {
+      "id": "ef84",
+      "userId": "7d74",
+      "userName": "Sakib",
+      "type": "employee",
+      "balance": 0
     }
   ],
   "transactions": [
@@ -76,6 +89,30 @@
       "amount": 500,
       "description": "sa",
       "transactiontime": "2025-07-12T13:25:36.174Z",
+      "accountId": "0e59"
+    },
+    {
+      "id": "361c",
+      "type": "Deposit",
+      "amount": 1200,
+      "description": "me",
+      "transactiontime": "2025-07-13T04:32:11.619Z",
+      "accountId": "0e59"
+    },
+    {
+      "id": "8d04",
+      "type": "Withdraw",
+      "amount": 2245,
+      "description": "d",
+      "transactiontime": "2025-07-13T07:33:54.905Z",
+      "accountId": "0e59"
+    },
+    {
+      "id": "50a6",
+      "type": "Deposit",
+      "amount": 1000,
+      "description": "a",
+      "transactiontime": "2025-07-13T07:34:29.502Z",
       "accountId": "0e59"
     }
   ],
