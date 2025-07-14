@@ -7,4 +7,6 @@ export class Accounts{
     balance !:number;
     userName?: string;  //last update
 
+    // new fild for close part
+     status?: 'Active' | 'Closed';
 }

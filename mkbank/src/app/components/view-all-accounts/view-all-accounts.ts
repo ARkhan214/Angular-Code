@@ -66,4 +66,35 @@ loadData(): void {
 
   }
 
+
+
+ // new method for close part
+  closeAccount(id: string): void {
+    this.accounService.closeAccount(id).subscribe({
+      next: () => {
+        this.loadData();
+        this.cdr.markForCheck();
+      },
+      error: (err) => {
+        console.log('Error closing account:', err);
+      }
+    });
+  }
+
+
+  // new method for open part
+  openAccount(id: string): void {
+  this.accounService.openAccount(id).subscribe({
+    next: () => {
+      this.loadData();
+      this.cdr.markForCheck();
+    },
+    error: (err) => {
+      console.log('Error opening account:', err);
+    }
+  });
+}
+
+
+
 }

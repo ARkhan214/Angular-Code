@@ -49,15 +49,15 @@ export class TransactionStatement {
         //for sender and resiver name
         
       //   this.transactions = result;
-      //   // ✅ Fetch sender & receiver names per transaction
+      //   // Fetch sender & receiver names per transaction
       // for (let tx of this.transactions) {
-      //   // ✅ Sender Name
+      //   // Sender Name
       //   this.accountService.getAccountsByUserId(tx.accountId).subscribe(accList => {
       //     this.senderNames[tx.id!] = accList[0]?.userName || 'Unknown';
       //     this.cd.detectChanges();
       //   });
 
-      //   // ✅ Receiver Name (only for Transfer)
+      //   // Receiver Name (only for Transfer)
       //   if (tx.receiverAccountId) {
       //     this.accountService.getAccountsByUserId(tx.receiverAccountId).subscribe(accList => {
       //       this.receiverNames[tx.id!] = accList[0]?.userName || 'Unknown';

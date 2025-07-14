@@ -1,6 +1,7 @@
 <div class="container my-4 p-4 bg-light border border-success rounded shadow-sm">
 
-  <h1 class="text-center text-white py-3 rounded mb-4" style="background: linear-gradient(to right, #00c6ff, #0072ff); font-weight: bold;">
+  <h1 class="text-center text-white py-3 rounded mb-4"
+    style="background: linear-gradient(to right, #00c6ff, #0072ff); font-weight: bold;">
     <i class="fa fa-users me-2"></i> All Account Details
   </h1>
 
@@ -12,6 +13,8 @@
         <th scope="col">User Name</th>
         <th scope="col">Type</th>
         <th scope="col">Balance</th>
+        <!-- new status code for close part -->
+        <th scope="col">Status</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -28,12 +31,30 @@
           }">{{ a.type }}</span>
         </td>
         <td><strong class="text-success">৳{{ a.balance }}</strong></td>
+        <!-- new status code for close part -->
+        <td>
+          <span [ngClass]="{
+          'badge bg-success': a.status === 'Active',
+          'badge bg-danger': a.status === 'Closed'
+        }">{{ a.status || 'Active' }}</span>
+        </td>
         <td>
           <button class="btn btn-outline-primary btn-sm me-2">
             <i class="fa fa-edit"></i> Edit
           </button>
-          <button class="btn btn-outline-danger btn-sm" (click)="deleteAccount(a.id)">
+          <button class="btn btn-outline-danger btn-sm me-2" (click)="deleteAccount(a.id)">
             <i class="fa fa-trash"></i> Delete
+          </button>
+          <!-- new button for close part -->
+          <!-- Close Button: Only show if account is Active -->
+          <button class="btn btn-outline-warning btn-sm" [disabled]="a.status === 'Closed'"
+            (click)="closeAccount(a.id)">
+            Close
+          </button>
+
+          <!-- Reopen Button: Only show if account is Closed -->
+          <button *ngIf="a.status === 'Closed'" class="btn btn-outline-success btn-sm" (click)="openAccount(a.id)">
+            Reopen
           </button>
         </td>
       </tr>

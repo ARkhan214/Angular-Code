@@ -42,10 +42,10 @@ export class Addtransaction {
     receiverAccountId: this.transactionForm.value.receiverAccountId
   };
 
-  // 🟢 Sender Transaction Save
+  // Sender Transaction Save
   this.transactionService.addTransactionWithBalance(transaction).subscribe({
     next: () => {
-      // 🟡 Receiver Transaction Save (only if it's a Transfer)
+      // Receiver Transaction Save (only if it's a Transfer)
       if (transaction.type === 'Transfer') {
         const receiverTransaction: Transaction = {
           type: 'Receive',
@@ -63,6 +63,10 @@ export class Addtransaction {
             this.transactionForm.reset();
           },
           error: (err) => {
+            // new code for close
+             if (err.message.includes('closed')) {
+              alert('Receiver account is closed!');
+             }
             alert('Receiver Transaction Error: ' + err.message);
           }
         });
@@ -72,6 +76,11 @@ export class Addtransaction {
       }
     },
     error: (err) => {
+      //new code for close
+      if (err.message.includes('closed')) {
+        alert('Sender account is closed!');
+      }
+
       alert('Sender Transaction Error: ' + err.message);
     }
   });

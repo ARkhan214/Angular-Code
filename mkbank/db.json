@@ -1,252 +1,126 @@
 {
   "user": [
     {
-      "id": "c7fa",
+      "id": "a582",
+      "name": "Sadier Rahman",
+      "email": "sadier@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "cdd4",
+      "name": "Atiq",
+      "email": "atiq@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "0d29",
       "name": "Reja",
       "email": "reja@gmail.com",
       "password": "1234"
     },
     {
-      "id": "3063",
-      "name": "Sadier",
-      "email": "sadia@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "7d74",
-      "name": "Sakib",
-      "email": "sakib@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "68e1",
-      "name": "Rahmat Ullah",
-      "email": "rahmat@gmail.com",
+      "id": "1c64",
+      "name": "Ratul",
+      "email": "ratul@gmail.com",
       "password": "12345"
     }
   ],
   "accounts": [
     {
-      "id": "12",
-      "userId": "c7fa",
+      "id": "101",
+      "userId": "a582",
+      "userName": "Sadier Rahman",
+      "type": "user",
+      "balance": 4000
+    },
+    {
+      "id": "102",
+      "userId": "cdd4",
+      "userName": "Atiq",
+      "type": "user",
+      "balance": 4500
+    },
+    {
+      "id": "103",
+      "userId": "0d29",
       "userName": "Reja",
       "type": "user",
-      "balance": 870
+      "balance": 1500
     },
     {
-      "id": "34",
-      "userId": "3063",
-      "userName": "Sadier",
+      "id": "578c",
+      "userId": "1c64",
+      "userName": "Ratul",
       "type": "user",
-      "balance": 2200
-    },
-    {
-      "id": "45",
-      "userId": "7d74",
-      "userName": "Sakib",
-      "type": "employee",
-      "balance": 0
-    },
-    {
-      "id": "56",
-      "userId": "68e1",
-      "userName": "Rahmat Ullah",
-      "type": "user",
-      "balance": 1270
+      "balance": 2000,
+      "status": "Active"
     }
   ],
   "transactions": [
     {
-      "id": "b370",
-      "type": "Transfer",
-      "amount": 297,
-      "description": "Home Rent😊",
-      "transactiontime": "2025-07-13T17:45:39.083Z",
-      "accountId": "34",
-      "receiverAccountId": "12"
-    },
-    {
-      "id": "49c2",
-      "type": "Receive",
-      "amount": 297,
-      "description": "Home Rent😊",
-      "transactiontime": "2025-07-13T17:45:39.124Z",
-      "accountId": "12",
-      "receiverAccountId": "34"
-    },
-    {
-      "id": "9bfc",
-      "type": "Transfer",
-      "amount": 570,
-      "description": "Birthday gift 😍🫂🍿🍿🤡",
-      "transactiontime": "2025-07-13T18:00:30.272Z",
-      "accountId": "34",
-      "receiverAccountId": "12"
-    },
-    {
-      "id": "7a13",
-      "type": "Receive",
-      "amount": 570,
-      "description": "Birthday gift 😍🫂🍿🍿🤡",
-      "transactiontime": "2025-07-13T18:00:30.308Z",
-      "accountId": "12",
-      "receiverAccountId": "34"
-    },
-    {
-      "id": "85a8",
-      "type": "Transfer",
-      "amount": 70,
-      "description": "food",
-      "transactiontime": "2025-07-13T18:25:15.774Z",
-      "accountId": "12",
-      "receiverAccountId": "34"
-    },
-    {
-      "id": "775b",
-      "type": "Receive",
-      "amount": 70,
-      "description": "food",
-      "transactiontime": "2025-07-13T18:25:15.821Z",
-      "accountId": "34",
-      "receiverAccountId": "12"
-    },
-    {
-      "id": "e2e3",
-      "type": "Transfer",
-      "amount": 270,
-      "description": "food",
-      "transactiontime": "2025-07-13T18:47:40.534Z",
-      "accountId": "34",
-      "receiverAccountId": "12"
-    },
-    {
-      "id": "cc00",
-      "type": "Receive",
-      "amount": 270,
-      "description": "food",
-      "transactiontime": "2025-07-13T18:47:40.626Z",
-      "accountId": "12",
-      "receiverAccountId": "34"
-    },
-    {
-      "id": "2072",
-      "type": "Transfer",
-      "amount": 400,
-      "description": "df",
-      "transactiontime": "2025-07-13T18:55:12.036Z",
-      "accountId": "12",
-      "receiverAccountId": "34"
-    },
-    {
-      "id": "395c",
-      "type": "Receive",
-      "amount": 400,
-      "description": "df",
-      "transactiontime": "2025-07-13T18:55:12.077Z",
-      "accountId": "34",
-      "receiverAccountId": "12"
-    },
-    {
-      "id": "dd03",
+      "id": "f0d4",
       "type": "Transfer",
       "amount": 500,
-      "description": "gf",
-      "transactiontime": "2025-07-13T19:04:23.283Z",
-      "accountId": "56",
-      "receiverAccountId": "34"
+      "description": "gg",
+      "transactiontime": "2025-07-14T13:03:51.193Z",
+      "accountId": "103",
+      "receiverAccountId": "102"
     },
     {
-      "id": "2fb3",
+      "id": "c3e3",
       "type": "Receive",
       "amount": 500,
-      "description": "gf",
-      "transactiontime": "2025-07-13T19:04:23.345Z",
-      "accountId": "34",
-      "receiverAccountId": "56"
-    }
-  ],
-  "deposit": [
-    {
-      "accountId": "5395",
-      "amount": "150",
-      "transactionDate": "2025-7-10",
-      "id": "4d3c"
-    }
-  ],
-  "withdraw": [
-    {
-      "id": "21d3",
-      "accountId": null,
-      "amount": 300,
-      "transactionDate": "2025-07-10",
-      "transactionId": "123",
-      "description": "Mobile Recharge"
+      "description": "gg",
+      "transactiontime": "2025-07-14T13:03:51.220Z",
+      "accountId": "102",
+      "receiverAccountId": "103"
     },
     {
-      "id": "c846",
-      "accountId": null,
-      "amount": 555,
-      "transactionDate": "2025-07-10",
-      "transactionId": "123",
-      "description": "f"
-    },
-    {
-      "id": "1413",
-      "accountId": null,
-      "amount": 10000,
-      "transactionDate": "2025-07-10",
-      "transactionId": "123",
-      "description": "Mobile"
-    },
-    {
-      "id": "f9ab",
-      "accountId": null,
+      "id": "45a2",
+      "type": "Transfer",
       "amount": 500,
-      "transactionDate": "2025-07-10",
-      "transactionId": "123",
-      "description": "bg"
+      "description": "ghg",
+      "transactiontime": "2025-07-14T13:04:23.913Z",
+      "accountId": "101",
+      "receiverAccountId": "102"
     },
     {
-      "id": "d5b0",
-      "accountId": null,
+      "id": "f1e4",
+      "type": "Receive",
+      "amount": 500,
+      "description": "ghg",
+      "transactiontime": "2025-07-14T13:04:23.934Z",
+      "accountId": "102",
+      "receiverAccountId": "101"
+    },
+    {
+      "id": "1e25",
+      "type": "Deposit",
+      "amount": 500,
+      "description": "me",
+      "transactiontime": "2025-07-14T13:08:32.737Z",
+      "accountId": "101",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "0d6d",
+      "type": "Withdraw",
+      "amount": 1000,
+      "description": "k",
+      "transactiontime": "2025-07-14T13:08:52.064Z",
+      "accountId": "101",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "0dbf",
+      "type": "Withdraw",
       "amount": 5000,
-      "transactionDate": "2025-07-10",
-      "transactionId": "123",
-      "description": "self"
-    },
-    {
-      "id": "50cd",
-      "accountId": null,
-      "amount": 570000,
-      "transactionDate": "2025-07-10",
-      "transactionId": "123",
-      "description": "for skincare"
-    },
-    {
-      "id": "b5c7",
-      "accountId": null,
-      "amount": 500,
-      "transactionDate": "2025-07-11",
-      "transactionId": "123",
-      "description": "me"
-    },
-    {
-      "id": "3a2a",
-      "accountId": null,
-      "accountName": "",
-      "amount": 550,
-      "transactionDate": "2025-07-11",
-      "transactionId": "123",
-      "description": "food"
-    },
-    {
-      "id": "39b3",
-      "accountId": null,
-      "accountName": "",
-      "amount": 500,
-      "transactionDate": "2025-07-11",
-      "transactionId": "123",
-      "description": "me"
+      "description": "fgggf",
+      "transactiontime": "2025-07-14T13:19:19.959Z",
+      "accountId": "103",
+      "receiverAccountId": ""
     }
-  ]
+  ],
+  "deposit": [],
+  "withdraw": []
 }
