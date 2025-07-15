@@ -23,6 +23,30 @@
       "name": "Ratul",
       "email": "ratul@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "fbff",
+      "name": "Abir",
+      "email": "abir@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "c598",
+      "name": "Babu",
+      "email": "babu@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "39c6",
+      "name": "Abdul Kuddus",
+      "email": "abk@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "2674",
+      "name": "Mamun",
+      "email": "mamun@gmail.com",
+      "password": "123"
     }
   ],
   "accounts": [
@@ -31,29 +55,57 @@
       "userId": "a582",
       "userName": "Sadier Rahman",
       "type": "user",
-      "balance": 4000
+      "balance": 1500
     },
     {
       "id": "102",
       "userId": "cdd4",
       "userName": "Atiq",
       "type": "user",
-      "balance": 4500
+      "balance": 1000
     },
     {
       "id": "103",
       "userId": "0d29",
       "userName": "Reja",
       "type": "user",
-      "balance": 1500
+      "balance": 1000
     },
     {
       "id": "578c",
       "userId": "1c64",
       "userName": "Ratul",
       "type": "user",
-      "balance": 2000,
+      "balance": 1500,
       "status": "Active"
+    },
+    {
+      "id": "0158",
+      "userId": "fbff",
+      "userName": "Abir",
+      "type": "user",
+      "balance": 1000
+    },
+    {
+      "id": "b4d2",
+      "userId": "c598",
+      "userName": "Babu",
+      "type": "user",
+      "balance": 6000
+    },
+    {
+      "id": "6964",
+      "userId": "39c6",
+      "userName": "Abdul Kuddus",
+      "type": "user",
+      "balance": 8000
+    },
+    {
+      "id": "3b00",
+      "userId": "2674",
+      "userName": "Mamun",
+      "type": "user",
+      "balance": 1000
     }
   ],
   "transactions": [
@@ -119,6 +171,94 @@
       "transactiontime": "2025-07-14T13:19:19.959Z",
       "accountId": "103",
       "receiverAccountId": ""
+    },
+    {
+      "id": "7ee2",
+      "type": "Deposit",
+      "amount": 4000,
+      "description": "for lipstick",
+      "transactiontime": "2025-07-15T09:18:21.950Z",
+      "accountId": "101",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "d750",
+      "type": "Withdraw",
+      "amount": 7000,
+      "description": "me",
+      "transactiontime": "2025-07-15T09:58:18.241Z",
+      "accountId": "101",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "8817",
+      "type": "Withdraw",
+      "amount": 3500,
+      "description": "self",
+      "transactiontime": "2025-07-15T09:58:46.233Z",
+      "accountId": "102",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "de99",
+      "type": "Withdraw",
+      "amount": 500,
+      "description": "jkh",
+      "transactiontime": "2025-07-15T09:59:12.041Z",
+      "accountId": "103",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "9c53",
+      "type": "Transfer",
+      "amount": 500,
+      "description": "gift",
+      "transactiontime": "2025-07-15T09:59:39.777Z",
+      "accountId": "101",
+      "receiverAccountId": "102"
+    },
+    {
+      "id": "548f",
+      "type": "Transfer",
+      "amount": 500,
+      "description": "hjk",
+      "transactiontime": "2025-07-15T10:12:33.314Z",
+      "accountId": "102",
+      "receiverAccountId": "101"
+    },
+    {
+      "id": "1d1c",
+      "type": "Transfer",
+      "amount": 500,
+      "description": ";ljkljk",
+      "transactiontime": "2025-07-15T11:50:50.253Z",
+      "accountId": "578c",
+      "receiverAccountId": "101"
+    },
+    {
+      "id": "057f",
+      "type": "Receive",
+      "amount": 500,
+      "description": ";ljkljk",
+      "transactiontime": "2025-07-15T11:50:50.300Z",
+      "accountId": "101",
+      "receiverAccountId": "578c"
+    },
+    {
+      "id": "cd40",
+      "type": "Deposit",
+      "amount": 3000,
+      "transactiontime": "2025-07-15T12:11:14.444Z",
+      "description": "Initial deposit during account creation",
+      "accountId": "b4d2"
+    },
+    {
+      "id": "9143",
+      "type": "Deposit",
+      "amount": 4000,
+      "transactiontime": "2025-07-15T12:12:34.821Z",
+      "description": "Initial deposit during account creation",
+      "accountId": "6964"
     }
   ],
   "deposit": [],
