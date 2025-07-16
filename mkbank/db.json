@@ -47,6 +47,12 @@
       "name": "Mamun",
       "email": "mamun@gmail.com",
       "password": "123"
+    },
+    {
+      "id": "9109",
+      "name": "Fahima",
+      "email": "fahima@gmail.com",
+      "password": "123"
     }
   ],
   "accounts": [
@@ -106,6 +112,13 @@
       "userName": "Mamun",
       "type": "user",
       "balance": 1000
+    },
+    {
+      "id": "6638",
+      "userId": "9109",
+      "userName": "Fahima",
+      "type": "user",
+      "balance": 1300
     }
   ],
   "transactions": [
