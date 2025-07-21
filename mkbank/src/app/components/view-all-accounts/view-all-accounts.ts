@@ -13,22 +13,21 @@ import { User } from '../../model/user.model';
 })
 export class ViewAllAccounts implements OnInit {
 
-account:any [] = [];
-// username:any;
+  account: Accounts[] = [];
+  filteredAccount: Accounts[] = [];
+  searchAccountId: string = '';
 
-   constructor(
+  constructor(
     private accounService: Accountsservice,
-    private userService:UserService,
+    private userService: UserService,
     private router: Router,
     private cdr: ChangeDetectorRef
   ) { }
 
-
   ngOnInit(): void {
-   this.loadData();
+    this.loadData();
   }
 
-  // account er sathe nam o user jog korlam
   loadData(): void {
     this.accounService.getAllAccount().subscribe(accounts => {
       const updatedAccounts: any[] = [];
@@ -37,14 +36,14 @@ account:any [] = [];
       accounts.forEach(acc => {
         this.userService.getUserById(acc.userId!).subscribe(user => {
           acc.userName = user.name;
-          acc.photoUrl = user.photoUrl; // photo add korlam
+          acc.photoUrl = user.photoUrl;
 
           updatedAccounts.push(acc);
           processed++;
 
-          // all user load and work
           if (processed === accounts.length) {
             this.account = [...updatedAccounts];
+            this.filteredAccount = [...updatedAccounts]; // 👈 Filtered list set
             this.cdr.markForCheck();
           }
         });
@@ -52,32 +51,18 @@ account:any [] = [];
     });
   }
 
+  filterAccounts(): void {
+    const search = this.searchAccountId.trim().toLowerCase();
+    if (search === '') {
+      this.filteredAccount = [...this.account]; // reset
+    } else {
+      this.filteredAccount = this.account.filter(acc =>
+        acc.id?.toLowerCase().includes(search)
+      );
+    }
+  }
 
-
-// loadData(): void {
-//     this.account = this.accounService.getAllAccount();
-//     // this.username = this.userService.getAllUser();
-//     this.cdr.markForCheck();
-//   }
-
-//last update
-
-//  loadData(): void {
-//       this.account =this.accounService.getAllAccount().subscribe(accounts => {
-//       const updatedAccounts: Accounts[] = [];
-//       accounts.forEach(acc => {
-//         this.userService.getUserById(acc.userId).subscribe(user => {
-//           acc.userName = user.name;
-//           updatedAccounts.push(acc);
-//           this.account = [...updatedAccounts];
-//           this.cdr.markForCheck();
-//         });
-//       });
-//     });
-//   }
-
-
-   deleteAccount(id: string): void {
+  deleteAccount(id: string): void {
     this.accounService.deleteAccount(id).subscribe({
       next: () => {
         console.log('Account deleted');
@@ -87,14 +72,9 @@ account:any [] = [];
       error: (err) => {
         console.log('Error deleting User: ', err);
       }
-
-    })
-
+    });
   }
 
-
-
- // new method for close part
   closeAccount(id: string): void {
     this.accounService.closeAccount(id).subscribe({
       next: () => {
@@ -107,20 +87,16 @@ account:any [] = [];
     });
   }
 
-
-  // new method for open part
   openAccount(id: string): void {
-  this.accounService.openAccount(id).subscribe({
-    next: () => {
-      this.loadData();
-      this.cdr.markForCheck();
-    },
-    error: (err) => {
-      console.log('Error opening account:', err);
-    }
-  });
-}
-
-
+    this.accounService.openAccount(id).subscribe({
+      next: () => {
+        this.loadData();
+        this.cdr.markForCheck();
+      },
+      error: (err) => {
+        console.log('Error opening account:', err);
+      }
+    });
+  }
 
 }

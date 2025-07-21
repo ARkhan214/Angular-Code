@@ -27,21 +27,7 @@ export class Accountsservice {
   );
 }
   
-//deposit main method
 
-  // depositToAccount(id: string, amount: number): Observable<any> {
-  //   const url = `${this.apiUrl}/${id}`;
-  //   return this.http.get<Accounts>(url).pipe(
-  //     map(account => {
-  //       let newBalance = account.balance + amount;
-  //       account.balance = newBalance;
-  //       return account;
-  //     }),
-  //     switchMap(updatedAccount => {
-  //       return this.http.put(`${this.apiUrl}/${id}`, updatedAccount);
-  //     })
-  //   );
-  // }
 
 // new method for close part
 
@@ -61,24 +47,6 @@ export class Accountsservice {
   );
 }
 
-
-
-
-//withdraw main method
-
-//   withdrawFromAccount(id: string, amount: number): Observable<any> { 
-
-//   const url = `${this.apiUrl}/${id}`;
-//   return this.http.get<Accounts>(url).pipe(
-//     switchMap(account => {
-//       if (account.balance < amount) {
-//         return throwError(() => new Error('Insufficient balance'));
-//       }
-//       account.balance -= amount;
-//       return this.http.put<Accounts>(url, account);
-//     })
-//   );
-// }
 
 
 // new method for close part
@@ -112,6 +80,13 @@ openAccount(id: string): Observable<any> {
     return this.http.get<Accounts[]>(`${this.apiUrl}?userId=${userId}`);
   }
 
+findAccountByUserId(userId: string): Observable<Accounts | null> {
+  return this.getAccountsByUserId(userId).pipe(
+    map(accounts => accounts.length > 0 ? accounts[0] : null)
+  );
+}
+
+
   //last update Accounts[]
 
   getAllAccount(): Observable<Accounts[]> {
@@ -130,16 +105,6 @@ openAccount(id: string): Observable<any> {
   deleteAccount(id: string): Observable<any> {
     return this.http.delete(this.apiUrl + '/' + id);
   }
-
-  // depositToAccount(id: string, amount: number): Observable<any> {
-  //   const url = `http://localhost:3000/accounts/${id}`;
-  //   return this.http.get<any>(url).pipe(
-  //     switchMap(account => {
-  //       account.balance += amount;
-  //       return this.http.put(url, account);
-  //     })
-  //   );
-  // }
 
 
 

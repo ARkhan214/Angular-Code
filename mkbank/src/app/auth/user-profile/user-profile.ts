@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '../../model/user.model';
 import { Accountsservice } from '../../service/accountsservice';
 import { Accounts } from '../../model/accounts.model';
 import { UserService } from '../../service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -16,14 +17,14 @@ export class UserProfile implements OnInit {
 
 
   account !: Accounts;
-  accId:string='';
+  accId: string = '';
 
   constructor(
     private accountService: Accountsservice,
-
-
-    private userService:UserService
-  ) {}
+    private userService: UserService,
+    private router:Router,
+    private cdRef: ChangeDetectorRef
+  ) { }
 
   ngOnInit(): void {
 
@@ -34,18 +35,22 @@ export class UserProfile implements OnInit {
       this.user = JSON.parse(data);
 
       // find user account
-      this.accountService.getAccountsByUserId(this.user.id!).subscribe(accs => {
-        if (accs.length > 0) {
-          this.account= accs[0]; // soupose one account for one user
+      this.accountService.findAccountByUserId(this.user.id!).subscribe(account => {
+        if (account) {
+          this.account = account;
+           this.cdRef.detectChanges();
+          console.log('Loaded account:', this.account);
+        } else {
+          console.warn('No account found for this user.');
         }
       });
     }
 
-    
+
   }
 
 
-  
+
   logout() {
     localStorage.removeItem('loggedInUser');
     window.location.href = '/login';
@@ -53,31 +58,24 @@ export class UserProfile implements OnInit {
 
 
 
-    loadAccountDetails(id:string):void{
+  loadAccountDetails(id: string): void {
 
     this.accountService.getAllAccountById(id).subscribe({
-      next:(acc:Accounts) =>{
-      this.account = acc;
+      next: (acc: Accounts) => {
+        this.account = acc;
       },
 
     })
   }
 
-  // loadUserProfile(): void {
-  //   const sub = this.accountService.getAccountsByUserId(any).subscribe({
-  //     next: (res) => {
-  //       console.log(res);
-  //       if (res) {
-  //         this.user = res;
-  //       }
-  //     },
-  //     error: (err) => {
-  //       console.error('Error loading user profile:', err);
-  //     }
-  //   });
+  //new method for statement
+viewStatement(): void {
+  this.router.navigate(['/trst'], {
+    queryParams: { accountId: this.account.id }
+  });
+}
 
-  //   this.subscription.add(sub);
-  // }
+
 
 
 

@@ -23,6 +23,62 @@
       "password": "12345",
       "type": "user",
       "photoUrl": "https://tinyurl.com/4akm3ehv"
+    },
+    {
+      "id": "3dd1",
+      "name": "Rishad",
+      "email": "rishad@gmail.com",
+      "password": "1234",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
+    },
+    {
+      "id": "e52b",
+      "name": "Tamim",
+      "email": "ta@gmail.com",
+      "password": "123",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
+    },
+    {
+      "id": "cdff",
+      "name": "Taju",
+      "email": "taju@gmail.com",
+      "password": "123",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
+    },
+    {
+      "id": "456a",
+      "name": "gfdgfdg",
+      "email": "sdfds@gdfg.v",
+      "password": "123",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/4akm3ehv"
+    },
+    {
+      "id": "8207",
+      "name": "Abu",
+      "email": "abu@ga.co",
+      "password": "1234",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
+    },
+    {
+      "id": "037f",
+      "name": "Babul",
+      "email": "babul@g.com",
+      "password": "123",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
+    },
+    {
+      "id": "7edb",
+      "name": "Fahim",
+      "email": "fah@g.v",
+      "password": "1234",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
     }
   ],
   "accounts": [
@@ -31,21 +87,70 @@
       "userId": "cc9d",
       "userName": "Taj",
       "type": "user",
-      "balance": 1500
+      "balance": 62000
     },
     {
       "id": "86e7",
       "userId": "0225",
       "userName": "Raj",
       "type": "user",
-      "balance": 1
+      "balance": 40001
     },
     {
       "id": "6c48",
       "userId": "a7f6",
       "userName": "Khan",
       "type": "user",
+      "balance": 437080
+    },
+    {
+      "id": "642f",
+      "userId": "3dd1",
+      "userName": "Rishad",
+      "type": "user",
+      "balance": 60620
+    },
+    {
+      "id": "c34b",
+      "userId": "e52b",
+      "userName": "Tamim",
+      "type": "user",
       "balance": 1000
+    },
+    {
+      "id": "38f7",
+      "userId": "cdff",
+      "userName": "Taju",
+      "type": "user",
+      "balance": 2000
+    },
+    {
+      "id": "9519",
+      "userId": "456a",
+      "userName": "gfdgfdg",
+      "type": "user",
+      "balance": 1000
+    },
+    {
+      "id": "d407",
+      "userId": "8207",
+      "userName": "Abu",
+      "type": "user",
+      "balance": 4000
+    },
+    {
+      "id": "ab09",
+      "userId": "037f",
+      "userName": "Babul",
+      "type": "user",
+      "balance": 5500
+    },
+    {
+      "id": "0b27",
+      "userId": "7edb",
+      "userName": "Fahim",
+      "type": "user",
+      "balance": 10500
     }
   ],
   "transactions": [
@@ -111,6 +216,199 @@
       "transactiontime": "2025-07-21T05:58:59.710Z",
       "accountId": "86e7",
       "receiverAccountId": ""
+    },
+    {
+      "id": "0d86",
+      "type": "Transfer",
+      "amount": 500,
+      "description": "gf",
+      "transactiontime": "2025-07-21T18:50:15.527Z",
+      "accountId": "642f",
+      "receiverAccountId": "6c48"
+    },
+    {
+      "id": "c713",
+      "type": "Receive",
+      "amount": 500,
+      "description": "gf",
+      "transactiontime": "2025-07-21T18:50:15.587Z",
+      "accountId": "6c48",
+      "receiverAccountId": "642f"
+    },
+    {
+      "id": "bf96",
+      "type": "Transfer",
+      "amount": 500,
+      "description": "gd",
+      "transactiontime": "2025-07-21T18:50:42.319Z",
+      "accountId": "502d",
+      "receiverAccountId": "8e67"
+    },
+    {
+      "id": "d558",
+      "type": "Deposit",
+      "amount": 1000,
+      "description": "nfdghn",
+      "transactiontime": "2025-07-21T18:51:05.726Z",
+      "accountId": "502d",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "4a05",
+      "type": "Withdraw",
+      "amount": 700,
+      "description": "sdg",
+      "transactiontime": "2025-07-21T18:51:23.054Z",
+      "accountId": "502d",
+      "receiverAccountId": null
+    },
+    {
+      "id": "32cf",
+      "type": "Deposit",
+      "amount": 100000,
+      "description": "dzgsa",
+      "transactiontime": "2025-07-21T18:51:58.399Z",
+      "accountId": "86e7",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "0fbc",
+      "type": "Deposit",
+      "amount": 60000,
+      "description": "dhfsh",
+      "transactiontime": "2025-07-21T18:52:37.767Z",
+      "accountId": "642f",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "c043",
+      "type": "Withdraw",
+      "amount": 1880,
+      "description": "dfr",
+      "transactiontime": "2025-07-21T18:52:50.671Z",
+      "accountId": "642f",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "7573",
+      "type": "Deposit",
+      "amount": 436280,
+      "description": "dfs",
+      "transactiontime": "2025-07-21T18:53:09.897Z",
+      "accountId": "6c48",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "3f97",
+      "type": "Transfer",
+      "amount": 60000,
+      "description": "tee",
+      "transactiontime": "2025-07-21T18:53:37.910Z",
+      "accountId": "86e7",
+      "receiverAccountId": "502d"
+    },
+    {
+      "id": "b6a3",
+      "type": "Receive",
+      "amount": 60000,
+      "description": "tee",
+      "transactiontime": "2025-07-21T18:53:37.956Z",
+      "accountId": "502d",
+      "receiverAccountId": "86e7"
+    },
+    {
+      "id": "0336",
+      "type": "Deposit",
+      "amount": 1000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-21T19:28:38.965Z",
+      "accountId": "38f7"
+    },
+    {
+      "id": "dfff",
+      "type": "Deposit",
+      "amount": 500,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-21T19:29:42.896Z",
+      "accountId": "9519"
+    },
+    {
+      "id": "1987",
+      "type": "Deposit",
+      "amount": 2000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-21T19:31:20.670Z",
+      "accountId": "d407"
+    },
+    {
+      "id": "1dd4",
+      "type": "Deposit",
+      "amount": 2000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-21T19:34:34.685Z",
+      "accountId": "ab09"
+    },
+    {
+      "id": "fb8c",
+      "type": "Deposit",
+      "amount": 2000,
+      "description": "fgdsd",
+      "transactiontime": "2025-07-21T19:35:17.913Z",
+      "accountId": "ab09",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "be8e",
+      "type": "Withdraw",
+      "amount": 500,
+      "description": "dfvdsf",
+      "transactiontime": "2025-07-21T19:35:30.745Z",
+      "accountId": "ab09",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "0d49",
+      "type": "Deposit",
+      "amount": 5000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-21T19:42:32.356Z",
+      "accountId": "0b27"
+    },
+    {
+      "id": "a014",
+      "type": "Deposit",
+      "amount": 6000,
+      "description": "shthtr",
+      "transactiontime": "2025-07-21T19:43:18.539Z",
+      "accountId": "0b27",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "04e2",
+      "type": "Withdraw",
+      "amount": 500,
+      "description": "ghfg",
+      "transactiontime": "2025-07-21T19:43:31.852Z",
+      "accountId": "0b27",
+      "receiverAccountId": null
+    },
+    {
+      "id": "0797",
+      "type": "Transfer",
+      "amount": 700,
+      "description": "ghfdhf",
+      "transactiontime": "2025-07-21T20:16:17.754Z",
+      "accountId": "6c48",
+      "receiverAccountId": "502d"
+    },
+    {
+      "id": "1d9a",
+      "type": "Receive",
+      "amount": 700,
+      "description": "ghfdhf",
+      "transactiontime": "2025-07-21T20:16:17.807Z",
+      "accountId": "502d",
+      "receiverAccountId": "6c48"
     }
   ],
   "deposit": [],

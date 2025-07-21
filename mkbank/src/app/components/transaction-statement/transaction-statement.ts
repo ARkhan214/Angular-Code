@@ -1,11 +1,9 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Transaction } from '../../model/transactions.model';
 import { Transactionsservice } from '../../service/transactionsservice';
-import { Accounts } from '../../model/accounts.model';
-import { Accountsservice } from '../../service/accountsservice';
+import { ActivatedRoute } from '@angular/router';
 
 declare var html2pdf: any;
-
 
 @Component({
   selector: 'app-transaction-statement',
@@ -13,72 +11,35 @@ declare var html2pdf: any;
   templateUrl: './transaction-statement.html',
   styleUrl: './transaction-statement.css'
 })
-export class TransactionStatement {
+export class TransactionStatement implements OnInit {
 
-   accountId: string = '';
+  transactionsWithBalance: (Transaction & { balance: number })[] = [];
+  accountId: string = '';
   transactions: Transaction[] = [];
-  // accountInfo: Accounts[] = [];    //new add
   errorMessage: string = '';
   loading = false;
+  today: Date = new Date();
+  isLoggedInUser: boolean = false;
 
-  //for sender and resiver name
-  // senderNames: { [id: string]: string } = {};
-  // receiverNames: { [id: string]: string } = {};
+  // ✅ নতুন দুটি ফিল্ড: তারিখ ফিল্টারের জন্য
+  startDate!: string;
+  endDate!: string;
 
   constructor(
     private transactionService: Transactionsservice,
-    //  private accountService: Accountsservice,  //for sender and resiver name
+    private route: ActivatedRoute,
     private cd: ChangeDetectorRef
   ) {}
 
-  findStatement(): void {
-    if (!this.accountId.trim()) {
-      this.errorMessage = 'Please enter an Account ID.';
-      this.transactions = [];
-      return;
-    }
-
-    this.loading = true;
-    this.errorMessage = '';
-    this.transactions = [];
-
-    this.transactionService.getTransactionsByAccountId(this.accountId).subscribe({
-      next: (result) => {
-
-
-        //for sender and resiver name
-        
-      //   this.transactions = result;
-      //   // Fetch sender & receiver names per transaction
-      // for (let tx of this.transactions) {
-      //   // Sender Name
-      //   this.accountService.getAccountsByUserId(tx.accountId).subscribe(accList => {
-      //     this.senderNames[tx.id!] = accList[0]?.userName || 'Unknown';
-      //     this.cd.detectChanges();
-      //   });
-
-      //   // Receiver Name (only for Transfer)
-      //   if (tx.receiverAccountId) {
-      //     this.accountService.getAccountsByUserId(tx.receiverAccountId).subscribe(accList => {
-      //       this.receiverNames[tx.id!] = accList[0]?.userName || 'Unknown';
-      //       this.cd.detectChanges();
-      //     });
-      //   }
-      // }
-
-
-        this.loading = false;
-        if (result.length === 0) {
-          this.errorMessage = 'No transactions found for this Account ID.';
-        } else {
-          this.transactions = result;
-          this.cd.detectChanges();
-        }
-      },
-      error: (err) => {
-        console.error(err);
-        this.loading = false;
-        this.errorMessage = 'Error fetching statement.';
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params => {
+      const accountIdFromUrl = params['accountId'];
+      if (accountIdFromUrl) {
+        this.accountId = accountIdFromUrl;
+        this.isLoggedInUser = true;
+        this.findStatement();   // ✅ Auto load on route param
+      } else {
+        this.errorMessage = 'No account ID found in URL.';
       }
     });
   }
@@ -100,4 +61,58 @@ export class TransactionStatement {
     }
   }
 
+  findStatement(): void {
+    if (!this.accountId.trim()) {
+      this.errorMessage = 'Please enter an Account ID.';
+      this.transactions = [];
+      this.transactionsWithBalance = [];
+      return;
+    }
+
+    this.loading = true;
+    this.errorMessage = '';
+    this.transactions = [];
+    this.transactionsWithBalance = [];
+
+    this.transactionService.getTransactionsByAccountId(this.accountId).subscribe({
+      next: (result) => {
+        this.loading = false;
+
+        // ✅ তারিখ ফিল্টার (যদি ইউজার সিলেক্ট করে)
+        if (this.startDate && this.endDate) {
+          const start = new Date(this.startDate);
+          const end = new Date(this.endDate);
+
+          result = result.filter(t => {
+            const tDate = new Date(t.transactiontime);
+            return tDate >= start && tDate <= end;
+          });
+        }
+
+        if (result.length === 0) {
+          this.errorMessage = 'No transactions found for this Account ID.';
+        } else {
+          result.sort((a, b) => new Date(a.transactiontime).getTime() - new Date(b.transactiontime).getTime());
+
+          let balance = 0;
+          this.transactionsWithBalance = result.map(t => {
+            if (t.type === 'Deposit' || t.type === 'Receive') {
+              balance += t.amount;
+            } else if (t.type === 'Withdraw' || t.type === 'Transfer') {
+              balance -= t.amount;
+            }
+            return { ...t, balance };
+          });
+
+          this.transactions = result;
+          this.cd.detectChanges();
+        }
+      },
+      error: (err) => {
+        console.error(err);
+        this.loading = false;
+        this.errorMessage = 'Error fetching statement.';
+      }
+    });
+  }
 }

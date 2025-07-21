@@ -29,7 +29,7 @@ export class Updateusercomponent implements OnInit{
    loadUserById(): void {
     this.userservice.getUserById(this.id).subscribe({
       next: (res) => {
-  
+        
         this.cdr.markForCheck();
       },
       error: (err) => console.error('Error fetching User:', err)
