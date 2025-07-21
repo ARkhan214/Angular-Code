@@ -13,12 +13,12 @@ export class AdminGuard implements CanActivate {
     if (data) {
       const user = JSON.parse(data);
       if (user.type === 'admin') {
-        console.log('✅ Admin access granted');
+        console.log('Admin access granted');
         return true;
       }
     }
 
-    console.warn('⛔ Admin access denied');
+    console.warn('Admin access denied');
     this.router.navigate(['/login']);
     return false;
   }

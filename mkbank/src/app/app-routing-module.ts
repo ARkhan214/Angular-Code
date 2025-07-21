@@ -32,8 +32,8 @@ const routes: Routes = [
   {path:'addtr',component:Addtransaction},
   {path:'trst',component:TransactionStatement},
   {path:'login',component:Login},
-  {path: 'user-profile', component: UserProfile,canActivate:[UserGuard] },
-  {path: 'admin-profile', component: AdminProfile ,canActivate:[AdminGuard]},
+  {path: 'user-profile', component: UserProfile},
+  {path: 'admin-profile', component: AdminProfile},
 
   
 ];

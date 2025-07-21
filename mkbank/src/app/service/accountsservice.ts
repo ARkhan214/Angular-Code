@@ -118,6 +118,10 @@ openAccount(id: string): Observable<any> {
     return this.http.get<Accounts[]>(this.apiUrl);
   }
 
+  getAllAccountById(id:string): Observable<Accounts> {
+    return this.http.get<Accounts>(this.apiUrl+"/"+id);
+  }
+
 
   updateAccount(id: string, account: Accounts): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, account);

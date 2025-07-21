@@ -6,7 +6,10 @@ export class User{
     email!:string;
     password!:string;
     type !:string;
-    photoUrl?: string;  // নতুন ফিল্ড
+    photoUrl?: string;  // 
+    
+    // accId?:string;
+
 
 
 
