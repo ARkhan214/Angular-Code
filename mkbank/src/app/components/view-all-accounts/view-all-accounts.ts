@@ -13,7 +13,7 @@ import { User } from '../../model/user.model';
 })
 export class ViewAllAccounts implements OnInit {
 
-account:any;
+account:any [] = [];
 // username:any;
 
    constructor(
@@ -28,11 +28,37 @@ account:any;
    this.loadData();
   }
 
-loadData(): void {
-    this.account = this.accounService.getAllAccount();
-    // this.username = this.userService.getAllUser();
-    this.cdr.markForCheck();
+  // account er sathe nam o user jog korlam
+  loadData(): void {
+    this.accounService.getAllAccount().subscribe(accounts => {
+      const updatedAccounts: any[] = [];
+      let processed = 0;
+
+      accounts.forEach(acc => {
+        this.userService.getUserById(acc.userId!).subscribe(user => {
+          acc.userName = user.name;
+          acc.photoUrl = user.photoUrl; // photo add korlam
+
+          updatedAccounts.push(acc);
+          processed++;
+
+          // all user load and work
+          if (processed === accounts.length) {
+            this.account = [...updatedAccounts];
+            this.cdr.markForCheck();
+          }
+        });
+      });
+    });
   }
+
+
+
+// loadData(): void {
+//     this.account = this.accounService.getAllAccount();
+//     // this.username = this.userService.getAllUser();
+//     this.cdr.markForCheck();
+//   }
 
 //last update
 

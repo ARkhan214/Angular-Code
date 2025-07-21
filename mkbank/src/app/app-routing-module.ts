@@ -11,6 +11,13 @@ import { AboutBank } from './layout/about-bank/about-bank';
 import { TransactionComponent } from './components/transaction-component/transaction-component';
 import { Addtransaction } from './components/addtransaction/addtransaction';
 import { TransactionStatement } from './components/transaction-statement/transaction-statement';
+import { Login } from './auth/login/login';
+import { UserProfile } from './auth/user-profile/user-profile';
+import { AdminProfile } from './auth/admin-profile/admin-profile';
+import { AdminGuard } from './guards/admin-guard';
+import { UserGuard } from './guards/user-guard';
+
+
 
 const routes: Routes = [
   {path:'',component:Home},
@@ -24,6 +31,10 @@ const routes: Routes = [
   {path:'transaction',component:TransactionComponent},
   {path:'addtr',component:Addtransaction},
   {path:'trst',component:TransactionStatement},
+  {path:'login',component:Login},
+  {path: 'user-profile', component: UserProfile,canActivate:[UserGuard] },
+  {path: 'admin-profile', component: AdminProfile ,canActivate:[AdminGuard]},
+
   
 ];
 

@@ -29,9 +29,13 @@ return this.http.delete(this.baseUrl+'/'+id);
 
 //last update user[]
 
-getUserById(id:string):Observable<User[]>{
-  return this.http.get<User[]>(this.baseUrl+'/'+id);
+// getUserById(id:string):Observable<User[]>{
+//   return this.http.get<User[]>(this.baseUrl+'/'+id);
+// }
+getUserById(id: string): Observable<User> {
+  return this.http.get<User>(`${this.baseUrl}/${id}`);
 }
+
 
 updateUser(id:string,user:User):Observable<any>{
   return this.http.put(this.baseUrl+'/'+id,user);

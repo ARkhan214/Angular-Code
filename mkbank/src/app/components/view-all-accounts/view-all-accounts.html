@@ -15,11 +15,12 @@
         <th scope="col">Balance</th>
         <!-- new status code for close part -->
         <th scope="col">Status</th>
+        <th scope="col">Photo</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let a of account | async">
+      <tr *ngFor="let a of account ">
         <td>{{ a.id }}</td>
         <td>{{ a.userId }}</td>
         <td>{{ a.userName }}</td>
@@ -39,9 +40,14 @@
         }">{{ a.status || 'Active' }}</span>
         </td>
         <td>
-          <button class="btn btn-outline-primary btn-sm me-2">
+          <img [src]="a.photoUrl ? a.photoUrl : 'https://via.placeholder.com/50'" alt="User photo"
+            style="width: 50px; height: 50px; object-fit: cover; border-radius: 50%;">
+        </td>
+
+        <td>
+          <!-- <button class="btn btn-outline-primary btn-sm me-2">
             <i class="fa fa-edit"></i> Edit
-          </button>
+          </button> -->
           <button class="btn btn-outline-danger btn-sm me-2" (click)="deleteAccount(a.id)">
             <i class="fa fa-trash"></i> Delete
           </button>

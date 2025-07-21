@@ -20,6 +20,10 @@ import { TransactionComponent } from './components/transaction-component/transac
 import { AboutBank } from './layout/about-bank/about-bank';
 import { Addtransaction } from './components/addtransaction/addtransaction';
 import { TransactionStatement } from './components/transaction-statement/transaction-statement';
+import { Login } from './auth/login/login';
+import { Logout } from './auth/logout/logout';
+import { UserProfile } from './auth/user-profile/user-profile';
+import { AdminProfile } from './auth/admin-profile/admin-profile';
 
 
 @NgModule({
@@ -27,7 +31,7 @@ import { TransactionStatement } from './components/transaction-statement/transac
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement,
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement, Login, Logout, UserProfile, AdminProfile,
   ],
   imports: [
     BrowserModule,

@@ -9,4 +9,20 @@ export class Accounts{
 
     // new fild for close part
      status?: 'Active' | 'Closed';
+    //for photo
+    photoUrl?: string;
+
+
+
+
+    // user !:{        
+    // id :string;
+    // name :string;
+    // email :string;
+    // password :string;
+    // type :string;
+    // }
+
+
+
 }

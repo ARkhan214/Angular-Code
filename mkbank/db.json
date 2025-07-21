@@ -1,277 +1,116 @@
 {
   "user": [
     {
-      "id": "a582",
-      "name": "Sadier Rahman",
-      "email": "sadier@gmail.com",
-      "password": "1234"
+      "id": "cc9d",
+      "name": "Taj",
+      "email": "taj@gmail.com",
+      "password": "1234",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/4akm3ehv"
     },
     {
-      "id": "cdd4",
-      "name": "Atiq",
-      "email": "atiq@gmail.com",
-      "password": "123"
+      "id": "0225",
+      "name": "Raj",
+      "email": "raj@gmail.com",
+      "password": "123",
+      "type": "admin",
+      "photoUrl": "https://tinyurl.com/ycydevjb"
     },
     {
-      "id": "0d29",
-      "name": "Reja",
-      "email": "reja@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "1c64",
-      "name": "Ratul",
-      "email": "ratul@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "fbff",
-      "name": "Abir",
-      "email": "abir@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "c598",
-      "name": "Babu",
-      "email": "babu@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "39c6",
-      "name": "Abdul Kuddus",
-      "email": "abk@gmail.com",
-      "password": "1234"
-    },
-    {
-      "id": "2674",
-      "name": "Mamun",
-      "email": "mamun@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "9109",
-      "name": "Fahima",
-      "email": "fahima@gmail.com",
-      "password": "123"
+      "id": "a7f6",
+      "name": "Khan",
+      "email": "khan@gmail.com",
+      "password": "12345",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/4akm3ehv"
     }
   ],
   "accounts": [
     {
-      "id": "101",
-      "userId": "a582",
-      "userName": "Sadier Rahman",
+      "id": "502d",
+      "userId": "cc9d",
+      "userName": "Taj",
       "type": "user",
       "balance": 1500
     },
     {
-      "id": "102",
-      "userId": "cdd4",
-      "userName": "Atiq",
+      "id": "86e7",
+      "userId": "0225",
+      "userName": "Raj",
+      "type": "user",
+      "balance": 1
+    },
+    {
+      "id": "6c48",
+      "userId": "a7f6",
+      "userName": "Khan",
       "type": "user",
       "balance": 1000
-    },
-    {
-      "id": "103",
-      "userId": "0d29",
-      "userName": "Reja",
-      "type": "user",
-      "balance": 1000
-    },
-    {
-      "id": "578c",
-      "userId": "1c64",
-      "userName": "Ratul",
-      "type": "user",
-      "balance": 1500,
-      "status": "Active"
-    },
-    {
-      "id": "0158",
-      "userId": "fbff",
-      "userName": "Abir",
-      "type": "user",
-      "balance": 1000
-    },
-    {
-      "id": "b4d2",
-      "userId": "c598",
-      "userName": "Babu",
-      "type": "user",
-      "balance": 6000
-    },
-    {
-      "id": "6964",
-      "userId": "39c6",
-      "userName": "Abdul Kuddus",
-      "type": "user",
-      "balance": 8000
-    },
-    {
-      "id": "3b00",
-      "userId": "2674",
-      "userName": "Mamun",
-      "type": "user",
-      "balance": 1000
-    },
-    {
-      "id": "6638",
-      "userId": "9109",
-      "userName": "Fahima",
-      "type": "user",
-      "balance": 1300
     }
   ],
   "transactions": [
     {
-      "id": "f0d4",
-      "type": "Transfer",
-      "amount": 500,
-      "description": "gg",
-      "transactiontime": "2025-07-14T13:03:51.193Z",
-      "accountId": "103",
-      "receiverAccountId": "102"
+      "id": "314e",
+      "type": "Deposit",
+      "amount": 700,
+      "description": "friend",
+      "transactiontime": "2025-07-19T08:53:19.964Z",
+      "accountId": "86e7",
+      "receiverAccountId": ""
     },
     {
-      "id": "c3e3",
+      "id": "a433",
+      "type": "Withdraw",
+      "amount": 500,
+      "description": "bm",
+      "transactiontime": "2025-07-19T08:53:55.232Z",
+      "accountId": "86e7",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "fb4c",
+      "type": "Transfer",
+      "amount": 500,
+      "description": "dd",
+      "transactiontime": "2025-07-19T08:56:02.512Z",
+      "accountId": "86e7",
+      "receiverAccountId": "502d"
+    },
+    {
+      "id": "4f44",
       "type": "Receive",
       "amount": 500,
-      "description": "gg",
-      "transactiontime": "2025-07-14T13:03:51.220Z",
-      "accountId": "102",
-      "receiverAccountId": "103"
+      "description": "dd",
+      "transactiontime": "2025-07-19T08:56:02.541Z",
+      "accountId": "502d",
+      "receiverAccountId": "86e7"
     },
     {
-      "id": "45a2",
+      "id": "69e1",
       "type": "Transfer",
       "amount": 500,
-      "description": "ghg",
-      "transactiontime": "2025-07-14T13:04:23.913Z",
-      "accountId": "101",
-      "receiverAccountId": "102"
+      "description": "g",
+      "transactiontime": "2025-07-21T05:58:30.922Z",
+      "accountId": "86e7",
+      "receiverAccountId": "502d"
     },
     {
-      "id": "f1e4",
+      "id": "26af",
       "type": "Receive",
       "amount": 500,
-      "description": "ghg",
-      "transactiontime": "2025-07-14T13:04:23.934Z",
-      "accountId": "102",
-      "receiverAccountId": "101"
+      "description": "g",
+      "transactiontime": "2025-07-21T05:58:31.016Z",
+      "accountId": "502d",
+      "receiverAccountId": "86e7"
     },
     {
-      "id": "1e25",
-      "type": "Deposit",
-      "amount": 500,
-      "description": "me",
-      "transactiontime": "2025-07-14T13:08:32.737Z",
-      "accountId": "101",
-      "receiverAccountId": ""
-    },
-    {
-      "id": "0d6d",
+      "id": "4d76",
       "type": "Withdraw",
-      "amount": 1000,
-      "description": "k",
-      "transactiontime": "2025-07-14T13:08:52.064Z",
-      "accountId": "101",
+      "amount": 699,
+      "description": "hg",
+      "transactiontime": "2025-07-21T05:58:59.710Z",
+      "accountId": "86e7",
       "receiverAccountId": ""
-    },
-    {
-      "id": "0dbf",
-      "type": "Withdraw",
-      "amount": 5000,
-      "description": "fgggf",
-      "transactiontime": "2025-07-14T13:19:19.959Z",
-      "accountId": "103",
-      "receiverAccountId": ""
-    },
-    {
-      "id": "7ee2",
-      "type": "Deposit",
-      "amount": 4000,
-      "description": "for lipstick",
-      "transactiontime": "2025-07-15T09:18:21.950Z",
-      "accountId": "101",
-      "receiverAccountId": ""
-    },
-    {
-      "id": "d750",
-      "type": "Withdraw",
-      "amount": 7000,
-      "description": "me",
-      "transactiontime": "2025-07-15T09:58:18.241Z",
-      "accountId": "101",
-      "receiverAccountId": ""
-    },
-    {
-      "id": "8817",
-      "type": "Withdraw",
-      "amount": 3500,
-      "description": "self",
-      "transactiontime": "2025-07-15T09:58:46.233Z",
-      "accountId": "102",
-      "receiverAccountId": ""
-    },
-    {
-      "id": "de99",
-      "type": "Withdraw",
-      "amount": 500,
-      "description": "jkh",
-      "transactiontime": "2025-07-15T09:59:12.041Z",
-      "accountId": "103",
-      "receiverAccountId": ""
-    },
-    {
-      "id": "9c53",
-      "type": "Transfer",
-      "amount": 500,
-      "description": "gift",
-      "transactiontime": "2025-07-15T09:59:39.777Z",
-      "accountId": "101",
-      "receiverAccountId": "102"
-    },
-    {
-      "id": "548f",
-      "type": "Transfer",
-      "amount": 500,
-      "description": "hjk",
-      "transactiontime": "2025-07-15T10:12:33.314Z",
-      "accountId": "102",
-      "receiverAccountId": "101"
-    },
-    {
-      "id": "1d1c",
-      "type": "Transfer",
-      "amount": 500,
-      "description": ";ljkljk",
-      "transactiontime": "2025-07-15T11:50:50.253Z",
-      "accountId": "578c",
-      "receiverAccountId": "101"
-    },
-    {
-      "id": "057f",
-      "type": "Receive",
-      "amount": 500,
-      "description": ";ljkljk",
-      "transactiontime": "2025-07-15T11:50:50.300Z",
-      "accountId": "101",
-      "receiverAccountId": "578c"
-    },
-    {
-      "id": "cd40",
-      "type": "Deposit",
-      "amount": 3000,
-      "transactiontime": "2025-07-15T12:11:14.444Z",
-      "description": "Initial deposit during account creation",
-      "accountId": "b4d2"
-    },
-    {
-      "id": "9143",
-      "type": "Deposit",
-      "amount": 4000,
-      "transactiontime": "2025-07-15T12:12:34.821Z",
-      "description": "Initial deposit during account creation",
-      "accountId": "6964"
     }
   ],
   "deposit": [],

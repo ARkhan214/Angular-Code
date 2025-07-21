@@ -1,0 +1,10 @@
+<div class="container mt-4" *ngIf="admin">
+  <div class="card p-4 shadow-sm">
+    <div class="text-center">
+      <img [src]="admin.photoUrl || 'https://via.placeholder.com/150'" width="120" class="rounded-circle mb-3" />
+      <h3>{{ admin.name }}</h3>
+      <p><strong>Email:</strong> {{ admin.email }}</p>
+      <p><strong>ID:</strong> {{ admin.id }}</p>
+    </div>
+  </div>
+</div>

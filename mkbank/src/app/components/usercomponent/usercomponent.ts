@@ -29,15 +29,16 @@ export class Usercomponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       type: ['savings', Validators.required],
-      balance: ['', Validators.required]
+      balance: ['', Validators.required],
+      photoUrl: ['']   // For Photo
     });
   }
 
   onSubmit() {
     if (this.userAccountForm.valid) {
-      const { name, email, password, type, balance } = this.userAccountForm.value;
+      const { name, email, password, type, balance,photoUrl } = this.userAccountForm.value;
 
-      const newUser: User = { name, email, password };
+      const newUser: User = { name, email, password,type,photoUrl};
 
       this.userService.saveAllUser(newUser).subscribe(savedUser => {
         const newAccount: Accounts = {

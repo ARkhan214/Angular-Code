@@ -92,12 +92,12 @@ export class Accountsservice {
   );
 }
 
-// 🟢 Reactivate or Open account
+//  Reactivate or Open account
 openAccount(id: string): Observable<any> {
   const url = `${this.apiUrl}/${id}`;
   return this.http.get<Accounts>(url).pipe(
     switchMap(account => {
-      account.status = 'Active';  // ✅ status change
+      account.status = 'Active';  //  status change
       return this.http.put(url, account);
     })
   );
