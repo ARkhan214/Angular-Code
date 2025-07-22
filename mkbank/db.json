@@ -79,6 +79,14 @@
       "password": "1234",
       "type": "user",
       "photoUrl": "https://tinyurl.com/ys8ups8k"
+    },
+    {
+      "id": "a32f",
+      "name": "Sadier Rahman",
+      "email": "sadier@gmail.com",
+      "password": "1234",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ycydevjb"
     }
   ],
   "accounts": [
@@ -151,6 +159,13 @@
       "userName": "Fahim",
       "type": "user",
       "balance": 10500
+    },
+    {
+      "id": "13da",
+      "userId": "a32f",
+      "userName": "Sadier Rahman",
+      "type": "user",
+      "balance": 5000
     }
   ],
   "transactions": [
@@ -409,6 +424,14 @@
       "transactiontime": "2025-07-21T20:16:17.807Z",
       "accountId": "502d",
       "receiverAccountId": "6c48"
+    },
+    {
+      "id": "a671",
+      "type": "Deposit",
+      "amount": 5000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-22T10:35:51.204Z",
+      "accountId": "13da"
     }
   ],
   "deposit": [],

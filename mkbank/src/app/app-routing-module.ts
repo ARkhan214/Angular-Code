@@ -16,6 +16,7 @@ import { UserProfile } from './auth/user-profile/user-profile';
 import { AdminProfile } from './auth/admin-profile/admin-profile';
 import { AdminGuard } from './guards/admin-guard';
 import { UserGuard } from './guards/user-guard';
+import { ContactUs } from './layout/contact-us/contact-us';
 
 
 
@@ -34,6 +35,8 @@ const routes: Routes = [
   {path:'login',component:Login},
   {path: 'user-profile', component: UserProfile},
   {path: 'admin-profile', component: AdminProfile},
+  {path: 'contact', component: ContactUs},
+
 
   
 ];

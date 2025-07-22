@@ -52,6 +52,7 @@ export class UserProfile implements OnInit {
 
 
   logout() {
+    alert('You have been logged out successfully!');
     localStorage.removeItem('loggedInUser');
     window.location.href = '/login';
   }

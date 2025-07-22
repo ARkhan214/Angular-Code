@@ -24,6 +24,7 @@ import { Login } from './auth/login/login';
 import { Logout } from './auth/logout/logout';
 import { UserProfile } from './auth/user-profile/user-profile';
 import { AdminProfile } from './auth/admin-profile/admin-profile';
+import { ContactUs } from './layout/contact-us/contact-us';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { AdminProfile } from './auth/admin-profile/admin-profile';
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement, Login, Logout, UserProfile, AdminProfile,
+    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement, Login, Logout, UserProfile, AdminProfile, ContactUs,
   ],
   imports: [
     BrowserModule,
