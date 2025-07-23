@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { User } from '../../model/user.model';
 import { Router } from '@angular/router';
+import { Accountsservice } from '../../service/accountsservice';
+import { Accounts } from '../../model/accounts.model';
 
 @Component({
   selector: 'app-admin-profile',
@@ -11,17 +13,25 @@ import { Router } from '@angular/router';
 export class AdminProfile implements OnInit {
   admin!: User;
 
-  constructor(private router: Router) {}
+ 
+
+  constructor(
+    private router: Router
+
+  ) {}
 
   ngOnInit(): void {
     const data = localStorage.getItem('loggedInUser');
     if (data) {
       this.admin = JSON.parse(data);
     }
+   
   }
 
   logout() {
+    alert('You have been logged out successfully!');
     localStorage.removeItem('loggedInUser');
-    this.router.navigate(['/login']);
+    window.location.href = '/login';
+    // this.router.navigate(['/login']);
   }
 }

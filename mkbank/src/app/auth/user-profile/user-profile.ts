@@ -22,7 +22,7 @@ export class UserProfile implements OnInit {
   constructor(
     private accountService: Accountsservice,
     private userService: UserService,
-    private router:Router,
+    private router: Router,
     private cdRef: ChangeDetectorRef
   ) { }
 
@@ -38,7 +38,7 @@ export class UserProfile implements OnInit {
       this.accountService.findAccountByUserId(this.user.id!).subscribe(account => {
         if (account) {
           this.account = account;
-           this.cdRef.detectChanges();
+          this.cdRef.markForCheck();
           console.log('Loaded account:', this.account);
         } else {
           console.warn('No account found for this user.');
@@ -70,13 +70,18 @@ export class UserProfile implements OnInit {
   }
 
   //new method for statement
-viewStatement(): void {
-  this.router.navigate(['/trst'], {
-    queryParams: { accountId: this.account.id }
-  });
-}
+  viewStatement(): void {
+    this.router.navigate(['/trst'], {
+      queryParams: { accountId: this.account.id }
+    });
+  }
 
 
+    getLoginUserDetails() {
+    localStorage.getItem('loggedInUser');
+    console.log(localStorage.getItem('loggedInUser'));
+
+  }
 
 
 

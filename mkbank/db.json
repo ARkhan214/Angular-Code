@@ -87,6 +87,14 @@
       "password": "1234",
       "type": "user",
       "photoUrl": "https://tinyurl.com/ycydevjb"
+    },
+    {
+      "id": "de44",
+      "name": "Atiq plus Simul",
+      "email": "atiq@gmail.com",
+      "password": "123",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/ys8ups8k"
     }
   ],
   "accounts": [
@@ -95,7 +103,7 @@
       "userId": "cc9d",
       "userName": "Taj",
       "type": "user",
-      "balance": 62000
+      "balance": 112000
     },
     {
       "id": "86e7",
@@ -109,7 +117,7 @@
       "userId": "a7f6",
       "userName": "Khan",
       "type": "user",
-      "balance": 437080
+      "balance": 250000
     },
     {
       "id": "642f",
@@ -166,6 +174,13 @@
       "userName": "Sadier Rahman",
       "type": "user",
       "balance": 5000
+    },
+    {
+      "id": "4ba5",
+      "userId": "de44",
+      "userName": "Atiq plus Simul",
+      "type": "user",
+      "balance": 1000
     }
   ],
   "transactions": [
@@ -432,6 +447,77 @@
       "description": "Initial Deposit",
       "transactiontime": "2025-07-22T10:35:51.204Z",
       "accountId": "13da"
+    },
+    {
+      "id": "b3f9",
+      "type": "Deposit",
+      "amount": 1000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-23T09:07:33.814Z",
+      "accountId": "4ba5"
+    },
+    {
+      "id": "8173",
+      "type": "Withdraw",
+      "amount": 3000,
+      "description": "kkl",
+      "transactiontime": "2025-07-23T11:10:43.039Z",
+      "accountId": "6c48",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "16c3",
+      "type": "Deposit",
+      "amount": 500,
+      "description": "jhgj",
+      "transactiontime": "2025-07-23T11:11:39.773Z",
+      "accountId": "6c48",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "c88a",
+      "type": "Withdraw",
+      "amount": 34580,
+      "description": "fgh",
+      "transactiontime": "2025-07-23T12:27:51.225Z",
+      "accountId": "6c48",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "ebdf",
+      "type": "Deposit",
+      "amount": 100000,
+      "description": "Biya ",
+      "transactiontime": "2025-07-23T12:56:19.789Z",
+      "accountId": "6c48",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "4429",
+      "type": "Withdraw",
+      "amount": 200000,
+      "description": "k,jhb",
+      "transactiontime": "2025-07-23T12:57:34.111Z",
+      "accountId": "6c48",
+      "receiverAccountId": ""
+    },
+    {
+      "id": "758d",
+      "type": "Transfer",
+      "amount": 50000,
+      "description": "hjj",
+      "transactiontime": "2025-07-23T13:04:46.695Z",
+      "accountId": "6c48",
+      "receiverAccountId": "502d"
+    },
+    {
+      "id": "1ad4",
+      "type": "Receive",
+      "amount": 50000,
+      "description": "hjj",
+      "transactiontime": "2025-07-23T13:04:46.716Z",
+      "accountId": "502d",
+      "receiverAccountId": "6c48"
     }
   ],
   "deposit": [],
