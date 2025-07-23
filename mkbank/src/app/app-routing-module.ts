@@ -17,24 +17,25 @@ import { AdminProfile } from './auth/admin-profile/admin-profile';
 import { AdminGuard } from './guards/admin-guard';
 import { UserGuard } from './guards/user-guard';
 import { ContactUs } from './layout/contact-us/contact-us';
+import { MultiRoleGuard } from './guards/multi-role-guard';
 
 
 
 const routes: Routes = [
   {path:'',component:Home},
-  {path:'user',component:Usercomponent},
-  {path:'viewalluser',component:Viewallusercomponent},
+  {path:'user',component:Usercomponent,canActivate:[AdminGuard]},
+  {path:'viewalluser',component:Viewallusercomponent,canActivate:[AdminGuard]},
   {path:'updateuser/:id',component:Updateusercomponent},
-  {path:'viewallaccount',component:ViewAllAccounts},
+  {path:'viewallaccount',component:ViewAllAccounts,canActivate:[AdminGuard]},
   {path:'deposit',component:DepositComponent},
   {path:'withdraw',component:WithdrawComponent},
   {path:'about',component:AboutBank},
   {path:'transaction',component:TransactionComponent},
-  {path:'addtr',component:Addtransaction},
-  {path:'trst',component:TransactionStatement},
+  {path:'addtr',component:Addtransaction,canActivate:[UserGuard]},
+  {path:'trst',component:TransactionStatement,canActivate:[MultiRoleGuard]},
   {path:'login',component:Login},
-  {path: 'user-profile', component: UserProfile},
-  {path: 'admin-profile', component: AdminProfile},
+  {path: 'user-profile', component: UserProfile,canActivate:[UserGuard]},
+  {path: 'admin-profile', component: AdminProfile,canActivate:[AdminGuard]},
   {path: 'contact', component: ContactUs},
 
 
