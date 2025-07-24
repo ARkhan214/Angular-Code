@@ -96,4 +96,30 @@ export class Transactionsservice {
   }
 
 
+  //for all transaction
+//   getAllTransactions(): Observable<Transaction[]> {
+//   return this.http.get<Transaction[]>('http://localhost:3000/transactions');
+// }
+
+getAllTransactions(): Observable<Transaction[]> {
+  return this.http.get<Transaction[]>('http://localhost:3000/transactions').pipe(
+    map(data => data.filter(t => t.amount > 0)) // শুধু positive amount
+  );
+}
+getPositiveTransactions(): Observable<Transaction[]> {
+  return this.http.get<Transaction[]>('http://localhost:3000/transactions').pipe(
+    map(data => data.filter(t => t.amount > 0))
+  );
+}
+
+
+getWithdrawTransactions(): Observable<Transaction[]> {
+  return this.http.get<Transaction[]>('http://localhost:3000/transactions').pipe(
+    map(data => data.filter(t => t.type === 'Withdraw' || t.type === 'Transfer'))
+  );
+}
+
+
+
+
 }

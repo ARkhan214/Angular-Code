@@ -60,22 +60,36 @@ export class ViewAllAccounts implements OnInit {
         acc.id?.toLowerCase().includes(search)
       );
     }
+   
   }
 
-  deleteAccount(id: string): void {
-    this.accounService.deleteAccount(id).subscribe({
-      next: () => {
-        console.log('Account deleted');
-        this.loadData();
-        this.cdr.markForCheck();
-      },
-      error: (err) => {
-        console.log('Error deleting User: ', err);
-      }
-    });
+deleteAccount(id: string): void {
+  const confirmed = window.confirm('Are you sure you want to delete this account? This action cannot be undone.');
+
+  if (!confirmed) {
+    return; // user cancelled
   }
+
+  this.accounService.deleteAccount(id).subscribe({
+    next: () => {
+      console.log('Account deleted');
+      this.loadData();
+      this.cdr.markForCheck();
+    },
+    error: (err) => {
+      console.log('Error deleting User: ', err);
+    }
+  });
+}
+
 
   closeAccount(id: string): void {
+    const conform=window.confirm('Are you sure you want to close this account?');
+    if(!conform){
+      return;
+    }
+
+
     this.accounService.closeAccount(id).subscribe({
       next: () => {
         this.loadData();

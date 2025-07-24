@@ -6,14 +6,19 @@
   </h1>
 
   <!-- 🔍 Search Input -->
-  <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Search by Account ID"
-      [(ngModel)]="searchAccountId"
-      (input)="filterAccounts()" />
-  </div>
+ <div class="mb-3">
+  <strong>Search Account</strong>
+
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search by Account ID"
+    [(ngModel)]="searchAccountId"
+    (input)="filterAccounts()"
+    style="width: 250px;" />
+</div>
+
+
 
   <table class="table table-hover table-bordered table-striped text-center align-middle shadow">
     <thead class="table-success">

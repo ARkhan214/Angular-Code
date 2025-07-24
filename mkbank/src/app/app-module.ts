@@ -7,7 +7,6 @@ import { Home } from './home/home';
 import { Navbar } from './layout/navbar/navbar';
 
 import { Footer } from './layout/footer/footer';
-import { ViewCustomer } from './components/view-customer/view-customer';
 import { Usercomponent } from './components/usercomponent/usercomponent';
 import { Viewallusercomponent } from './components/viewallusercomponent/viewallusercomponent';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -25,6 +24,7 @@ import { Logout } from './auth/logout/logout';
 import { UserProfile } from './auth/user-profile/user-profile';
 import { AdminProfile } from './auth/admin-profile/admin-profile';
 import { ContactUs } from './layout/contact-us/contact-us';
+import { AdminDashboard } from './components/admin-dashboard/admin-dashboard';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { ContactUs } from './layout/contact-us/contact-us';
     App,
     Home,
     Navbar,  
-    Footer, ViewCustomer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement, Login, Logout, UserProfile, AdminProfile, ContactUs,
+    Footer, Usercomponent, Viewallusercomponent, Updateusercomponent, ViewAllAccounts, DepositComponent, WithdrawComponent, TransactionComponent, AboutBank, Addtransaction, TransactionStatement, Login, Logout, UserProfile, AdminProfile, ContactUs, AdminDashboard,
   ],
   imports: [
     BrowserModule,

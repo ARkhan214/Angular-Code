@@ -19,12 +19,10 @@ export class UserService {
 
   ) {
 
-    const storedUser = this.isBrowser() ? JSON.parse(localStorage.getItem('currentUser') || 'null') : null;
+    const storedUser = this.isBrowser() ? JSON.parse(localStorage.getItem('loggedInUser') || 'null') : null;
     this.currentUserSubject = new BehaviorSubject<User | null>(storedUser);
     this.currentUser$ = this.currentUserSubject.asObservable();
   }
-
-
 
 
   private isBrowser(): boolean {
@@ -35,14 +33,14 @@ export class UserService {
   setLoginUser(user: User): void {
     if (this.isBrowser()) {
       localStorage.setItem('loggedInUser', JSON.stringify(user));
-      this.currentUserSubject.next(user); // ✅ update observable
+      this.currentUserSubject.next(user); //update observable
     }
   }
 
   logout(): void {
     if (this.isBrowser()) {
       localStorage.removeItem('loggedInUser');
-      this.currentUserSubject.next(null); // ✅ update observable
+      this.currentUserSubject.next(null); // update observable
     }
   }
 
@@ -55,8 +53,8 @@ export class UserService {
     return user ? user.type : null;
   }
 
-  //user[] last update
 
+  //for admin dashbord
   getAllUser(): Observable<User[]> {
     return this.http.get<User[]>(this.baseUrl);
   }
@@ -69,12 +67,6 @@ export class UserService {
     return this.http.delete(this.baseUrl + '/' + id);
   }
 
-  //last update user[]
-
-  // getUserById(id:string):Observable<User[]>{
-  //   return this.http.get<User[]>(this.baseUrl+'/'+id);
-  // }
-
   getUserById(id: string): Observable<User> {
     return this.http.get<User>(`${this.baseUrl}/${id}`);
   }
@@ -84,6 +76,10 @@ export class UserService {
     return this.http.put(this.baseUrl + '/' + id, user);
   }
 
+    //for admin dashbord
+  getAllUsers() {
+    return this.http.get<User[]>('http://localhost:3000/user');
+  }
 
 
 

@@ -21,7 +21,7 @@ export class TransactionStatement implements OnInit {
   today: Date = new Date();
   isLoggedInUser: boolean = false;
 
-  // ✅ নতুন দুটি ফিল্ড: তারিখ ফিল্টারের জন্য
+  // new Fild for Date
   startDate!: string;
   endDate!: string;
 
@@ -29,7 +29,7 @@ export class TransactionStatement implements OnInit {
     private transactionService: Transactionsservice,
     private route: ActivatedRoute,
     private cd: ChangeDetectorRef
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -78,7 +78,7 @@ export class TransactionStatement implements OnInit {
       next: (result) => {
         this.loading = false;
 
-        // ✅ তারিখ ফিল্টার (যদি ইউজার সিলেক্ট করে)
+        // if user select date
         if (this.startDate && this.endDate) {
           const start = new Date(this.startDate);
           const end = new Date(this.endDate);
@@ -96,11 +96,15 @@ export class TransactionStatement implements OnInit {
 
           let balance = 0;
           this.transactionsWithBalance = result.map(t => {
+
             if (t.type === 'Deposit' || t.type === 'Receive') {
               balance += t.amount;
+              console.log(t.amount);
             } else if (t.type === 'Withdraw' || t.type === 'Transfer') {
               balance -= t.amount;
             }
+            
+
             return { ...t, balance };
           });
 

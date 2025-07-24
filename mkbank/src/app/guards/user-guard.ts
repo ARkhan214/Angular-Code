@@ -9,13 +9,10 @@ import { AuthService } from '../service/auth-service';
 export class UserGuard implements CanActivate {
 
   constructor(
+
     private router: Router
 
-
-    // private authService: AuthService,
-    // @Inject(PLATFORM_ID) private platformid:Object
-
-  ) {}
+  ) { }
 
   canActivate(): boolean {
     const data = localStorage.getItem('loggedInUser');
@@ -31,12 +28,5 @@ export class UserGuard implements CanActivate {
     this.router.navigate(['/login']);
     return false;
   }
-
-  //  canActivate(): boolean | UrlTree | Observable<boolean | UrlTree>{
-  //   if(this.authService.isAuthenticated() && this.authService.isAdmin()){
-  //     return true;      
-  //   }
-  //   return this.router.createUrlTree(['login']);
-  // }
 
 }

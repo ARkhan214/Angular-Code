@@ -12,66 +12,42 @@
 
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav me-auto">
-      <li class="nav-item">
+      
+
+       <li class="nav-item">
         <a class="nav-link text-warning fw-semibold" routerLink="/"><i class="fa fa-home me-1 text-warning"></i>Home</a>
       </li>
+    
 
-      <!-- <li class="nav-item">
-        <a class="nav-link text-dark fw-semibold" routerLink="/dashboard"><i class="fa fa-dashboard me-1 text-dark"></i>Dashboard</a>
-      </li> -->
       <ng-container *ngIf="userType === 'admin' ">
-        <li class="nav-item">
+         <li class="nav-item">
           <a class="nav-link text-info fw-semibold" routerLink="/viewallaccount"><i
               class="fa fa-credit-card me-1 text-info"></i>Accounts</a>
         </li>
-
-      </ng-container>
-
-
-
-     
-      
-
-      <ng-container *ngIf="userType === 'admin' ">
-        <li class="nav-item">
-          <a class="nav-link text-info fw-semibold" routerLink="/viewalluser"><i
-              class="fa fa-credit-card me-1 text-info"></i>All User Details</a>
+         <li class="nav-item">
+          <a class="nav-link text-info fw-semibold" routerLink="/admindash"><i
+              class="fa fa-credit-card me-1 text-info"></i>Dashboard</a>
         </li>
+         <li class="nav-item">
+        <a class="nav-link text-success fw-semibold" routerLink="/trst"><i
+            class="fa fa-exchange me-1 text-success"></i>Transaction Statement</a>
+      </li>
+       
         <li class="nav-item">
-          <a class="nav-link text-muted fw-semibold" routerLink="/user"><i
+          <a class="nav-link text-muted fw-semibold" routerLink="/adduser"><i
               class="fa fa-user-plus me-1 text-muted"></i>Add
             User</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link text-success fw-semibold" routerLink="/trst"><i
-            class="fa fa-exchange me-1 text-success"></i>Transaction Statement</a>
-      </li>
+          <a class="nav-link text-info fw-semibold" routerLink="/viewalluser"><i
+              class="fa fa-credit-card me-1 text-info"></i>All User Details</a>
+        </li>
        <li class="nav-item">
-        <a class="nav-link text-success fw-semibold" routerLink="/admin-profile"><i
-            class="fa fa-exchange me-1 text-success"></i>Admin Profile</a>
+        <a class="nav-link text-success fw-semibold" routerLink="/admin-profile"><i class="fa-solid fa-user me-1"></i>Admin Profile</a>
       </li>
-
       </ng-container>
 
-
-
-
-
       <ng-container *ngIf="userType === 'user' ">
-
-        <!-- <li class="nav-item">
-          <a class="nav-link text-dark fw-semibold" routerLink="/addtr"><i
-              class="fa fa-download me-1 text-dark"></i>Deposit</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-success fw-semibold" routerLink="/addtr"><i
-              class="fa fa-upload me-1 text-success"></i>Withdraw</a>
-        </li>
-         <li class="nav-item">
-        <a class="nav-link text-success fw-semibold" routerLink="/addtr"><i
-            class="fa fa-exchange me-1 text-success"></i>Transfar Money</a>
-      </li> -->
-
          <li class="nav-item">
         <a class="nav-link text-success fw-semibold" routerLink="/addtr"><i
             class="fa fa-exchange me-1 text-success"></i>Transaction</a>
@@ -80,36 +56,18 @@
         <a class="nav-link text-success fw-semibold" routerLink="/user-profile"><i
             class="fa fa-exchange me-1 text-success"></i>User Profile</a>
       </li>
-
       </ng-container>
 
 
     </ul>
 
     <ul class="navbar-nav ms-auto">
-
-      <!-- <li class="nav-item">
-        <a class="nav-link text-info fw-semibold" routerLink="/register"><i class="fa fa-user-plus me-1"></i>Register</a>
-      </li> -->
-
       <ng-container *ngIf="userType !== 'admin' && userType !== 'user'">
       <li class="nav-item">
         <a class="nav-link text-success fw-semibold me-5" routerLink="/login"><i class="fa fa-sign-in me-1"></i>Login</a>
       </li>
-      </ng-container>
-
-
-      <!-- <li class="nav-item">
-        <a class="nav-link text-warning fw-bold" style="cursor: pointer;" routerLink="/login">
-          <i class="fa fa-sign-out me-1"></i>Logout
-        </a>
-      </li> -->
-
-
+      </ng-container> 
     </ul>
+
   </div>
 </nav>
-
-
-
-<!-- Whithout role -->

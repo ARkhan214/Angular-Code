@@ -12,9 +12,11 @@ import { Accounts } from '../../model/accounts.model';
   styleUrl: './viewallusercomponent.css'
 })
 export class Viewallusercomponent implements OnInit {
-
+ users:User[]=[];
   // user:User = new User();
-  user: any;
+  // user: any;
+  filteredUser: User[] = [];
+  searchUserId: string = '';
 
   constructor(
     private userservice: UserService,
@@ -33,9 +35,32 @@ export class Viewallusercomponent implements OnInit {
 
 
   loadData(): void {
-    this.user = this.userservice.getAllUser();
-    this.cdr.markForCheck();
+  this.userservice.getAllUsers().subscribe({
+    next: (data) => {
+      this.users = data;
+      this.filteredUser = [...data]; // ✅ Add this line
+      this.cdr.markForCheck();
+    },
+    error: (err) => {
+      console.error('Error loading users:', err);
+    }
+  });
+}
+
+
+    filterUser(): void {
+    const search = this.searchUserId.trim().toLowerCase();
+    if (search === '') {
+      this.filteredUser = [...this.users]; // reset
+    } else {
+      this.filteredUser = this.users.filter(acc =>
+        acc.id?.toLowerCase().includes(search)
+      );
+    }
+      this.cdr.markForCheck();
   }
+
+  
 
   deleteUser(id: string): void {
 

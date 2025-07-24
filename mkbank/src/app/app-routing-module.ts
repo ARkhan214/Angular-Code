@@ -14,16 +14,16 @@ import { TransactionStatement } from './components/transaction-statement/transac
 import { Login } from './auth/login/login';
 import { UserProfile } from './auth/user-profile/user-profile';
 import { AdminProfile } from './auth/admin-profile/admin-profile';
-import { AdminGuard } from './guards/admin-guard';
-import { UserGuard } from './guards/user-guard';
 import { ContactUs } from './layout/contact-us/contact-us';
-import { MultiRoleGuard } from './guards/multi-role-guard';
+import { UserGuard } from './guards/user-guard';
+import { AdminDashboard } from './components/admin-dashboard/admin-dashboard';
+
 
 
 
 const routes: Routes = [
   {path:'',component:Home},
-  {path:'user',component:Usercomponent},
+  {path:'adduser',component:Usercomponent},
   {path:'viewalluser',component:Viewallusercomponent},
   {path:'updateuser/:id',component:Updateusercomponent},
   {path:'viewallaccount',component:ViewAllAccounts},
@@ -37,6 +37,7 @@ const routes: Routes = [
   {path: 'user-profile', component: UserProfile},
   {path: 'admin-profile', component: AdminProfile},
   {path: 'contact', component: ContactUs},
+  {path: 'admindash', component: AdminDashboard},
 
 
   

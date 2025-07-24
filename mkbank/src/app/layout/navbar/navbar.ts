@@ -11,7 +11,9 @@ export class Navbar implements OnInit {
 
    userType: string = '';
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.userService.currentUser$.subscribe(user => {
