@@ -47,6 +47,14 @@
       "password": "123",
       "type": "user",
       "photoUrl": "https://tinyurl.com/yc332xxy "
+    },
+    {
+      "id": "05eb",
+      "name": " Taj",
+      "email": "taj@g.c",
+      "password": "123",
+      "type": "user",
+      "photoUrl": "https://tinyurl.com/4akm3ehv"
     }
   ],
   "accounts": [
@@ -69,7 +77,7 @@
       "userId": "fef7",
       "userName": "Rahmat Ullah",
       "type": "user",
-      "balance": 0
+      "balance": 1000
     },
     {
       "id": "8afb",
@@ -91,10 +99,33 @@
       "userName": "Atiqul Islam",
       "type": "user",
       "balance": 0
+    },
+    {
+      "id": "a7e0",
+      "userId": "05eb",
+      "userName": " Taj",
+      "type": "user",
+      "balance": 1000
     }
   ],
   "transactions": [
-
+    {
+      "id": "d62b",
+      "type": "Deposit",
+      "amount": 1000,
+      "description": "Initial Deposit",
+      "transactiontime": "2025-07-25T16:25:39.627Z",
+      "accountId": "a7e0"
+    },
+    {
+      "id": "ae15",
+      "type": "Deposit",
+      "amount": 1000,
+      "description": "wer",
+      "transactiontime": "2025-07-25T17:03:21.102Z",
+      "accountId": "c87f",
+      "receiverAccountId": ""
+    }
   ],
   "deposit": [],
   "withdraw": []

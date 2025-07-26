@@ -1,0 +1,3 @@
+Command:  powershell Set-ExecutionPolicy RemoteSigned
+New Project Command: ng new myapp --no-standalone
+Service Create Command: ng g s service(folder name)/user.service(service name)
