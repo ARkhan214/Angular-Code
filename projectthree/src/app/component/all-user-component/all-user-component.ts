@@ -32,15 +32,34 @@ export class AllUserComponent implements OnInit {
 
 
 viewUser(id: number) {
-  alert(`Viewing user with ID: ${id}`);
+  this.userService.getUserById(id).subscribe({
+    next: (user) => {
+      alert(`User: ${user.name}\nEmail: ${user.email}`);
+      
+    },
+    error: (err) => {
+      alert('User not found!');
+      console.error(err);
+    }
+  });
 }
+
 
 deleteUser(id: number) {
   if (confirm('Are you sure to delete?')) {
-    console.log('Deleting user:', id);
-    // Call API here if needed
+    this.userService.deleteUser(id).subscribe({
+      next: () => {
+        alert('User deleted successfully!');
+        this.loaadUsers(); 
+      },
+      error: (err) => {
+        alert('Failed to delete user.');
+        console.error(err);
+      }
+    });
   }
 }
+
 
 
 }
