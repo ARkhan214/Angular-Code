@@ -19,12 +19,15 @@ constructor(
 getAllUser():Observable<User[]>{
   return this.http.get<User[]>(this.baseUrl);
 }
-deleteUser(id: number): Observable<User[]> {
-  return this.http.delete<User[]>(`${this.baseUrl}${id}`);
-}
 
 getUserById(id: number): Observable<User> {
   return this.http.get<User>(`${this.baseUrl}${id}`);
 }
+
+deleteUserById(id: number): Observable<any> {
+  return this.http.delete(`${this.baseUrl}${id}`);
+}
+
+
 
 }

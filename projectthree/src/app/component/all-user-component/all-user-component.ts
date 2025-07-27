@@ -19,11 +19,11 @@ export class AllUserComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.loaadUsers();
+    this.loadData();
 
   }
 
-  loaadUsers(){
+  loadData(){
     this.userService.getAllUser().subscribe({
       next:(res)=>{this.users=res;},
       error:(err)=>{console.log(err);}
@@ -47,18 +47,14 @@ viewUser(id: number) {
 
 deleteUser(id: number) {
   if (confirm('Are you sure to delete?')) {
-    this.userService.deleteUser(id).subscribe({
-      next: () => {
-        alert('User deleted successfully!');
-        this.loaadUsers(); 
-      },
-      error: (err) => {
-        alert('Failed to delete user.');
-        console.error(err);
-      }
+    this.userService.deleteUserById(id).subscribe(() => {
+      alert('User deleted successfully');
+      this.loadData();
     });
   }
 }
+
+
 
 
 
