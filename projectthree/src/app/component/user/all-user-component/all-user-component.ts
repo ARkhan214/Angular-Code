@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../model/user.model';
-import { UserService } from '../../service/user.service';
+import { UserService } from '../../../service/user.service';
+import { User } from '../../../model/user.model';
 
 @Component({
   selector: 'app-all-user-component',
@@ -8,30 +8,26 @@ import { UserService } from '../../service/user.service';
   templateUrl: './all-user-component.html',
   styleUrl: './all-user-component.css'
 })
-export class AllUserComponent implements OnInit {
-
-    users : User []= [];
+export class AllUserComponent implements OnInit{
+ users : User []= [];
 
     constructor(
       private userService:UserService
     ){}
 
-
-
-  ngOnInit(): void {
+     ngOnInit(): void {
     this.loadData();
 
   }
 
-  loadData(){
+    loadData(){
     this.userService.getAllUser().subscribe({
       next:(res)=>{this.users=res;},
       error:(err)=>{console.log(err);}
     });
   }
 
-
-viewUser(id: number) {
+  viewUser(id: number) {
   this.userService.getUserById(id).subscribe({
     next: (user) => {
       alert(`User: ${user.name}\nEmail: ${user.email}`);
@@ -53,9 +49,4 @@ deleteUser(id: number) {
     });
   }
 }
-
-
-
-
-
 }

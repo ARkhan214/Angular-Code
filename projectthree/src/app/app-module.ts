@@ -3,17 +3,25 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { AllUserComponent } from './component/all-user-component/all-user-component';
+
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { AddJobseesker } from './component/jonseeker/add-jobseesker/add-jobseesker';
+import { ViewAllJobseesker } from './component/jonseeker/view-all-jobseesker/view-all-jobseesker';
+import { AllUserComponent } from './component/user/all-user-component/all-user-component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     App,
-    AllUserComponent
+   AllUserComponent,
+    AddJobseesker,
+    ViewAllJobseesker
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
    
   ],
   providers: [
