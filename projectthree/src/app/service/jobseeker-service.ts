@@ -9,7 +9,7 @@ import { JobSeeker } from '../model/jobSeeker.model';
 })
 export class JobseekerService {
   
-private baseUrl = environment.apiBaseUrl+'/jobseeker';
+private baseUrl = environment.apiBaseUrl+'/jobseeker/';
 
 constructor(
   private http:HttpClient
